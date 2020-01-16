@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+ <head>
+	 <meta charset="UTF-8">
+	 <title>订蛋糕-深圳网上订蛋糕-生日蛋糕预定-蛋糕价格-广州订蛋糕送货上门</title>
+	 <link rel="stylesheet" href="css/comm.css">
+	 <link rel="stylesheet" href="css/head.css">
+	 <link rel="stylesheet" href="css/foot.css">
+	 <link rel="stylesheet" href="css/chef_intr.css">
+	 <link rel="stylesheet" href="css/lunbo.css">
+	 <script src="js/ajax.js"></script>
+	<style>
+		a{text-decoration:none;}
+		.lun_three,.bestnew_service{
+			width:100%;
+			height:740px;
+			background:url(image/cake_book/page-bg.gif);
+			text-align: center;
+		}
+		.bestnew_service{
+			height: 726px;
+		}
+		.line{
+			height:3px;
+		}
+		#three_title{
+			width:1162px;
+			height:172px;
+			margin:auto;
+			background:url(image/index/top-bg.png) no-repeat top center;
+			display:flex;
+			justify-content:space-between;
+			align-items:center;
+		}
+		.on-you{
+			width:1162px;
+			margin:auto;
+			background:url(image/index/top-bg.png) no-repeat top center;
+		}
+		.title{
+			width:1162px;
+			margin:auto;
+			text-align:center;
+			padding:10px 0px;
+		}
+		#content{
+			width:1162px;
+			margin:auto;
+		}
+		#content::after{
+			content:"";
+			display:block;
+			clear:both;
+		}
+		.borb{
+			border-bottom:1px solid #ddd;
+		}
+		
+		.service{
+			text-align:center;
+			margin:50px 0px;
+			display:flex;
+			justify-content:space-around;
+		}
+		.service a{
+			display:inline-block;
+			width:84px;
+			color:#333;
+			font-size:15px;
+			background:url(image/index/icon-bg.png) no-repeat;
+		}
+		.service a span{
+			display:inline-block;
+			width:84px;
+			padding-top:90px;
+			background:url(image/index/icon.png) no-repeat;
+		}
+		.service a span.rhdg{background-position:0px 0px;}
+		.service a span.rhfk{background-position:-151px 0px;}
+		.service a span.rhsh{background-position:-453px 0px;}
+		.service a span.psfw{background-position:-302px 0px;}
+		.service a span.bzpt{background-position:-603px 0px;}
+		.service a span.yh{background-position:-754px 0px;}
+		.service a span.mfpc{background-position:-1056px 0px;}
+	</style>
+ </head>
+ <body>
+		<!-- 引入头 -->
+	<hr>
+	<div id="head">
+		<a href="index.html">
+			<img class="img_time" src="image/reg_login/top-logo.png" alt="">
+		</a>
+		<!--  头里面的图片之间的内容-->
+		<div id="head_nei">
+			<div id="head_nei_top">
+				<div>
+					<span class="font-c">当前城市：</span>
+					<span class="font-c" id="city">深圳市
+						<img src="image/reg_login/jt_down.jpg" alt="">
+					</span>
+				</div>
+				<div id="q-right">
+					<a id="qq" href="#" title="点击开始咨询">QQ咨询</a>
+						<a href="#" id="shopping">
+							<span id="shopcat">0</span>件
+						</a>
+						<a href="my_login.html" class="bac">登录</a>
+						<a href="my_reguser.html" class="bac">注册</a>
+				</div>
+			</div>
+			<div id="head_nei_bottom">
+				<div id="a_all">
+					<a href="index.html" class="active">
+						<p>Category</p>
+						<p>产品名录</p>
+					</a>
+					<a href="aboutUs.html">
+						<p>About Us</p>
+						<p>关于我们</p>
+					</a>
+					<a href="ourService.html">
+						<p>Our Service</p>
+						<p>为您服务</p>
+					</a>
+					<a href="cakeBook.html">
+						<p>Cake Book</p>
+						<p>食材之旅</p>
+					</a>
+					<a href="upDates.html">
+						<p>Updates</p>
+						<p>最新活动</p>
+					</a>
+				</div>
+				<div id="Phone">
+					<p class="phone">400-917-59517</p>
+					<p class="eat">就要吃 我就要吃</p>
+					<p class="phone">13428908593</p>
+				</div>
+			</div>
+		</div>
+		<img src="image/reg_login/icon-3.png" alt="">
+	</div>
+	<!-- 以上是头部 -->
+
+	<!-- 轮播图和三个标题 -->
+	<div class="lun_three">
+		<div  id="main">
+			<div id="banner">
+							
+			</div>
+		</div>
+		
+		<div class="line">
+		</div>
+		<div id="three_title">
+			<a href=""><img src="image/index/cake-icon-1.png"></a>
+			<a href=""><img src="image/index/cake-icon-2.png"></a>
+			<a href=""><img src="image/index/cake-icon-m.png"></a>
+		</div>
+	</div>
+	<div class="on-you">
+		<div class="title">
+			<img src="image/index/hot-p.png" alt="">
+		</div>
+	</div>
+	
+	<div id="content">
+		<!-- 蛋糕列表-->
+		<div id="pro_list"></div>
+	</div>
+
+	<!--最新活动和为您服务-->
+	<div class="bestnew_service">
+
+		<div class="on-you">
+			<br>
+			<br>
+			<div class="title borb">
+				<img src="image/index/going.png" alt="">
+			</div>
+			<!--最新活动-->
+			<div class="bestnew">
+				<div>
+					<a href="">
+						<div>
+							<img id="bestnew_i1" src="" alt="">
+						</div>
+						<p id="bestnew_p1"></p>
+						<span id="bestnew_s1"></span>
+					</a>
+				</div>
+				<div>
+					<a href="">
+						<div>
+							<img id="bestnew_i2" src="" alt="">
+						</div>
+						<p id="bestnew_p2"></p>
+						<span id="bestnew_s2"></span>
+					</a>
+				</div>
+				<div>
+					<a href="">
+						<div>
+							<img id="bestnew_i3" src="" alt="">
+						</div>
+						<p id="bestnew_p3"></p>
+						<span id="bestnew_s3"></span>
+					</a>
+				</div>
+				
+			</div>
+			<!--为您服务-->
+			<div class="title borb">
+				<img src="image/index/service.png" alt="">
+			</div>
+			<div class="service">
+				<a href=""><span class="rhdg">如何订购</span></a>
+				<a href=""><span class="rhfk">如何付款</span></a>
+				<a href=""><span class="rhsh">如何收货</span></a>
+				<a href=""><span class="psfw">配送范围</span></a>
+				<a href=""><span class="bzpt">包装及配套</span></a>
+				<a href=""><span class="yh">优惠</span></a>
+				<a href=""><span class="mfpc">免费品尝</span></a>
+			</div>
+		</div>
+	</div>
+
+	  <!-- 脚部 -->
+    <!--底边框 		 -->
+    <div id="bottom">
+			<table></table>
+			<div id="bottom_parent">
+				<div>
+					<img src="image/reg_login/bot-logo.gif" alt="">
+				</div>
+				<!--两个ul 		 -->
+				<div id="bottom_ul2">
+					<ul id="bottom_u1">
+						<li><a href="aboutUs.html">关于我们</a></li>
+						<li><a href="cakeBook.html">Cake Book</a></li>
+						<li><a href="upDates.html">Updates</a></li>
+						<li><a href="#">加入我们</a></li>
+						<li><a href="#">官方微博</a></li>
+					</ul>
+					<ul id="bottom_u2">
+						<li class="order">订购服务</li>
+						<li>
+							<a href="#">如何订购</a>
+							<a href="#" class="mar">优惠</a>
+						</li>
+						<li>
+							<a href="#">如何付款</a>
+							<a href="#" class="mar">申请免费品尝</a>
+						</li>
+						<li><a href="#">如何收费</a></li>
+						<li><a href="#">配送范围</a></li>
+						<li><a href="#">包装及配套</a></li>
+					</ul>
+				</div>
+				<div id="bottom_b-right">
+					<div id="bottom_d1">
+						<p>定购热线：400-917-5917</p>
+						<p>13428908593</p>
+					</div>
+					<div id="bottom_d2">
+						<p>客服时间：9:00-21:00</p>
+						<p>客服邮箱: service@caketime.com.cn</p>
+					</div>
+					<div id="bottom_d3">
+						<p>送货时间：10：00 - 20：00</p>
+						<p>送货范围：　 深圳市罗湖片区、福田片区、南山片区、龙华坂田片区、 宝安中心区、西乡片区、龙岗片区、布吉片区 免费送货上门 <a href="" id="yH">粤ICP备13057838号</a></p>
+						<p>营业执照号：9144030058406033XW</p>
+						<p>食品经营许可证：JY14403110003939</p>
+						<a href="#">
+							<img src="https://szcert.ebs.org.cn/Images/govIcon.gif" alt="">
+						</a>
+					</div>
+				</div>
+			</div>
+			</div>
+<script src="js/bestnew.js"></script>		
+<script>
+
+	(async function(){
+		var result=await Promise.all([
+			ajax({
+				url:"/user/dg",
+				type:"get"
+			}),
+			ajax({
+				url:"/user/nactive",
+				type:"get"
+			}),
+			ajax({
+				url:"/user/carousel",
+				type:"get"
+			})
+		]);
+		console.log(result[0]);
+		var strHTML=`<ul>`;
+		for(var i=0;i<result[0].length;i++){
+			for(var j=0,op="";j<result[0][i].price.split("&").length;j++){
+				op+="<option value=''>"+result[0][i].price.split("&")[j]+"</option>";
+			}
+			strHTML+=`
+				<li>
+					<div class="imgs">
+						<a href="javascript:;">
+							<img data-title="${result[0][i].title}" src="${result[0][i].sm}" alt="a">
+						</a>
+						<div class="size">
+							<div class="size-con">
+								<select name="">
+									${op}
+								</select>
+							</div>
+							<div class="buy">
+								<img src="image/index/icon-1-w.png">
+							</div>
+						</div>
+					</div>
+					<div>
+						<img  title="评论数" src="image/index/icon-15.png">
+						<span class="s1" title="评论数">
+							${result[0][i].message}
+						</span>&nbsp;&nbsp;&nbsp;&nbsp;
+						<a title="点击赞我" href="javascript:;">
+							<img src="image/index/icon-16.png">
+							<span class="s1">${result[0][i].heart}</span>
+						</a>
+					</div>
+					<p class="p_other" title="${result[0][i].other_title}">
+						${result[0][i].other_title}
+					</p>
+					<p class="p_main" title="${result[0][i].title}">
+						${result[0][i].title}
+					</p>
+				</li>`;
+		}
+		strHTML+=`</ul>`;
+		var pro_list=document.getElementById("pro_list");
+		pro_list.innerHTML=strHTML;
+		//ul中li点击跳转到商品详情页面
+		// var uli=document.querySelectorAll("#pro_list>ul li");
+		// for(var li of uli){
+		// 	li.onclick=function(){
+		// 		// console.log(this.getAttribute("data-title"));
+		// 	    location="product_details.html?title="+this.getAttribute("data-title");
+		// 	}
+		// }
+		var uli=document.querySelector("#pro_list>ul");
+		uli.onclick=function(e){
+			if(e.target.nodeName=="IMG"&&e.target.getAttribute("alt")=="a"){
+				location="product_details.html?title="+e.target.getAttribute("data-title");
+			}
+		}
+		
+		//最新活动
+		bestnew_p1.innerHTML=result[1][0].title;
+		bestnew_p2.innerHTML=result[1][1].title;
+		bestnew_p3.innerHTML=result[1][2].title;
+		bestnew_s1.innerHTML=result[1][0].date;
+		bestnew_s2.innerHTML=result[1][1].date;
+		bestnew_s3.innerHTML=result[1][2].date;
+		bestnew_i1.src=result[1][0].sm;
+		bestnew_i2.src=result[1][1].sm;
+		bestnew_i3.src=result[1][2].sm;
+
+		//轮播图
+		console.log(result[2]);
+		console.log(result[2].length);//4
+		var lun_len=result[2].length;
+		var banner_ul1=`<ul id="ul-imgs" style="width:${(lun_len+1)*1904}px; margin-left:0px;">`;
+		var banner_ul2=`<ul id="ul-idxs">
+							<li class="active"></li>`;
+		for(var i=0;i<lun_len;i++){
+			banner_ul1+=`<li><a href="javascript:;"><img data-title="${result[2][i].title}" title="点击查看" src="${result[2][i].img}"></a></li>`;
+			if(i<lun_len-1){
+				banner_ul2+=`<li></li>`;
+			}
+		}
+		banner_ul1+=`<li><a href="javascript:;"><img src="${result[2][0].img}"></a></li></ul>`;
+		banner_ul2+=`</ul>`;
+		var banner=document.getElementById("banner");
+	    banner.innerHTML=banner_ul1+banner_ul2;
+		banner.onclick=function(e){
+			if(e.target.nodeName=="IMG"){
+				location="product_details.html?title="+e.target.getAttribute("data-title");
+			}
+		}
+		// console.log(banner_ul1);
+		// console.log(banner_ul2);
+
+		//轮播
+		var i=0;
+		var LIWIDTH=1904;
+		var DURATION=500;
+		// var LICOUNT=lun_len;
+		var ulImgs=document.getElementById("ul-imgs");
+		var ulIdxs=document.getElementById("ul-idxs");
+		var lis=ulIdxs.children;
+		function moveTo(to){
+			if(to==undefined){
+				to=i+1;
+			}
+			if(i==0){
+				ulImgs.className="transition";
+			}
+			i=to;
+			ulImgs.style.marginLeft=-i*LIWIDTH+"px";
+			for(var li of lis){
+				li.className=""
+			}
+			if(i==lun_len){
+				i=0;
+				setTimeout(function(){
+					ulImgs.className="";
+					ulImgs.style.marginLeft=0;
+				},DURATION)
+			}
+			lis[i].className="active";
+		}
+
+		var interval=3000;
+		var timer=setInterval(function(){
+			moveTo()
+		},interval);
+
+		banner.onmouseover=function(){
+			clearInterval(timer);
+		}
+		banner.onmouseout=function(){
+			timer=setInterval(function(){
+			moveTo()
+			},interval);
+		}
+		var ulIdxs=document.getElementById("ul-idxs");
+		ulIdxs.onmouseover=function(e){
+				var li=e.target;
+				if(li.nodeName=="LI"&&li.className!=="active"){
+						for(var i=0;i<lis.length;i++){
+							if(lis[i]==li){
+							break;
+							}
+						}
+						setTimeout(function(){
+							moveTo(i);
+						},100);
+				}
+		}
+	})()
+
+</script>
+ </body>
+</html>

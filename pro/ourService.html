@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>免费试吃</title>
+    <link rel="stylesheet" href="css/comm.css">
+    <link rel="stylesheet" href="css/head.css">
+    <link rel="stylesheet" href="css/foot.css">
+    <style>
+    .title{
+			width:1162px;
+			margin:auto;
+			text-align:center;
+			padding:10px 0px;
+	}
+    .borb{
+		border-bottom:1px solid #ddd;
+	}
+    .content{
+		width:1162px;
+		margin:auto;
+	}
+    .on-you{
+		background:url(image/index/top-bg.png) no-repeat top center;
+    }
+    .service{
+		text-align:center;
+		margin:50px 0px;
+		display:flex;
+		justify-content:space-around;
+	}
+	.service a{
+	    display:inline-block;
+		width:84px;
+		color:#333;
+		font-size:15px;
+		background:url(image/index/icon-bg.png) no-repeat;
+	}
+	.service a:hover{
+		background:url(image/index/icon-bgon.png) no-repeat;
+	}
+	.service a span{
+		display:inline-block;
+		width:84px;
+		padding-top:90px;
+		background:url(image/index/icon.png) no-repeat;
+	}
+	.service a span.rhdg{background-position:0px 0px;}
+	.service a span.rhfk{background-position:-151px 0px;}
+	.service a span.rhsh{background-position:-453px 0px;}
+	.service a span.psfw{background-position:-302px 0px;}
+	.service a span.bzpt{background-position:-603px 0px;}
+	.service a span.yh{background-position:-754px 0px;}
+	.service a span.mfpc{background-position:-1056px 0px;}
+	.active_tiaojian .t_title{
+		padding-top:10px;
+	}
+	.active_tiaojian .t_title .line{
+		height:1px;
+		background-color: #ddd;
+		margin:50px 0px;
+		position:relative;
+		text-align: center;
+	}
+	.active_tiaojian .t_title .line::before{
+		content:"";
+		display: table;
+	}
+	.active_tiaojian .t_title .line p{
+		margin-top:-20px;
+		font-size:30px;
+		color:#300;
+	}
+	.tiaojian .tj_ul{
+		list-style: none;
+		/* padding:0px 0px 50px; */
+		margin-left: 120px;
+	}
+	.tiaojian .tj_ul li{
+		color:#666;
+		font:14px "microsoft yahei";
+	}
+	.tiaojian .tj_ul .one,.biaozhu{
+		color:#a68363;
+		font:18px "microsoft yahei";
+		padding-bottom:25px;
+	}
+	.biaozhu{
+		text-align: center;
+		margin-top:30px;
+	}
+	.content table{
+		color:#666;
+		font:14px "microsoft yahei";
+		margin-left:50px;
+	}
+	.content table tr td{
+		padding:5px 0px;
+		
+	}
+	.content table tr .td_left{
+		text-align: right;
+	}
+	.content table tr td input{
+		width:190px;
+		padding:5px;
+		color:#666;
+		border:1px solid #b0916a;
+	}
+	.content table tr td input.yzm{
+		width:90px;
+		margin-right: 10px;
+	}
+	.content table tr td .yzm_msg{
+		background:#666;
+		padding:3px 10px;
+	}
+	.content table tr td span{
+		color:#f00;
+		font-weight: bold;
+	}
+	.content table tr td select{
+		width:202px;
+		padding:4px;
+		color:#666;
+		vertical-align: middle;
+		background-color: #f1f1f1;
+	}
+	.sub_p{
+		text-align: center;
+	}
+	.submit{
+		width:150px;
+		height:40px;
+		color:#fff;
+		background: #b0916a;
+		display:inline-block;
+		font:18px "microsoft yahei";
+		text-decoration: none;
+		border-radius:2px;
+		line-height: 40px;
+		margin-bottom: 30px;
+	}
+	.yzm_msg{font-size:16px;padding-left:10px;font-weight:bold;}
+    </style>
+</head>
+<body onload="yzm()">
+    <!-- 引入头 -->
+		<hr>
+		<div id="head">
+			<a href="index.html">
+				<img class="img_time" src="image/reg_login/top-logo.png" alt="">
+			</a>
+			<!--  头里面的图片之间的内容-->
+			<div id="head_nei">
+				<div id="head_nei_top">
+					<div>
+						<span class="font-c">当前城市：</span>
+						<span class="font-c" id="city">深圳市
+							<img src="image/reg_login/jt_down.jpg" alt="">
+						</span>
+					</div>
+					<div id="q-right">
+						<a id="qq" href="#" title="点击开始咨询">QQ咨询</a>
+							<a href="#" id="shopping">
+								<span id="shopcat">0</span>件
+							</a>
+							<a href="my_login.html" class="bac">登录</a>
+							<a href="my_reguser.html" class="bac">注册</a>
+					</div>
+				</div>
+				<div id="head_nei_bottom">
+					<div id="a_all">
+						<a href="index.html">
+							<p>Category</p>
+							<p>产品名录</p>
+						</a>
+						<a href="aboutUs.html">
+							<p>About Us</p>
+							<p>关于我们</p>
+						</a>
+						<a href="ourService.html" class="active">
+							<p>Our Service</p>
+							<p>为您服务</p>
+						</a>
+						<a href="cakeBook.html">
+							<p>Cake Book</p>
+							<p>食材之旅</p>
+						</a>
+						<a href="upDates.html">
+							<p>Updates</p>
+							<p>最新活动</p>
+						</a>
+					</div>
+					<div id="Phone">
+						<p class="phone">400-917-59517</p>
+						<p class="eat">就要吃 我就要吃</p>
+						<p class="phone">13428908593</p>
+					</div>
+				</div>
+			</div>
+			<img src="image/reg_login/icon-3.png" alt="">
+		</div>
+		<!-- 以上是头部 -->
+
+    <!--为您服务-->
+	<div class="title borb">
+		<img src="image/index/service.png" alt="">
+	</div>
+	
+    <div class="content">
+        <div class="service">
+            <a href=""><span class="rhdg">如何订购</span></a>
+            <a href=""><span class="rhfk">如何付款</span></a>
+            <a href=""><span class="rhsh">如何收货</span></a>
+            <a href=""><span class="psfw">配送范围</span></a>
+            <a href=""><span class="bzpt">包装及配套</span></a>
+            <a href=""><span class="yh">优惠</span></a>
+            <a href=""><span class="mfpc">免费品尝</span></a>
+        </div>
+        <div class="active_tiaojian on-you">
+			<div class="t_title">
+				<div class="line">
+					<p>活动条件</p>
+				</div>
+			</div>
+		</div>
+	</div>
+		<div class="content">
+			<div class="tiaojian">
+				<ul class="tj_ul">
+					<li class="one">欢迎您加入CakeTime免费品尝活动的队列中来(本品尝活动仅针对公司，不针对非公司组织的私人聚会）。</li>
+					<li>您需符合以下申报活动条件：</li>
+					<li>1、您的公司从未参加过CakeTime举办的免费品尝活动。</li>
+					<li>2、您的公司可以参加品尝的人数在16人以上。</li>
+					<li>3、蛋糕需要您和您的同事们现场品尝。</li>
+					<li>4、贵公司需提供例如茶水间，休息室，会议室等可以品尝蛋糕的区域。</li>
+					<li>5、请您协助CakeTime市场人员做好试吃活动的组织工作。</li>
+					<li>6、如您公司有采购需求、福利标准，请您协助我们的市场专员进行了解。</li>
+				</ul>
+			</div>
+		</div>
+		<div class="content">
+			<div class="active_tiaojian">
+				<div class="t_title">
+					<div class="line">
+						<p>信息填写</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="content">
+			<table>
+				<tr>
+					<td class="td_left">您的公司全称：</td>
+					<td>
+						<input type="text"><span>*</span>
+					</td>
+					<td class="td_left">企业需求：</td>
+					<td>
+						<select name="company_need" id="">
+							<option value="客户关怀">客户关怀</option>
+							<option value="活动供应">活动供应</option>
+							<option value="员工福利">员工福利</option>
+							<option value="礼品采购">礼品采购</option>
+						</select>
+					</td>
+					<td class="td_left">您的职位：</td>
+					<td>
+						<input type="text"><span>*</span>
+					</td>
+				</tr>
+				<tr>
+					<td class="td_left">您的公司地址：</td>
+					<td>
+						<input type="text"><span>*</span>
+					</td>
+					<td class="td_left">品尝地点：</td>
+					<td>
+						<select name="taste_place" id="">
+							<option value="会议室">会议室</option>
+							<option value="茶水间">茶水间</option>
+							<option value="餐厅">餐厅</option>
+							<option value="休息区">休息区</option>
+							<option value="工作区">工作区</option>
+							<option value="其他">其他</option>
+					    </select>
+				   </td>
+					<td class="td_left">您的姓名：</td>
+					<td>
+						<input type="text"><span>*</span>
+					</td>
+				</tr>
+				<tr>
+					<td class="td_left">您的公司人数：</td>
+					<td>
+						<select name="company_number" id="">
+							<option value="20-50人">20-50人</option>
+							<option value="50-100人">50-100人</option>
+							<option value="100-200人">100-200人</option>
+							<option value="200以上">200以上</option>
+						</select>
+					</td>
+					<td class="td_left">参与活动人员数量：</td>
+					<td><select name="company_need" id="">
+						<option value="15-20人">15-20人</option>
+						<option value="21-25人">21-25人</option>
+						<option value="26-30人">26-30人</option>
+						<option value="30人以上">30人以上</option>
+					</select>
+					</td>
+					<td class="td_left">您的办公电话：</td>
+					<td>
+						<input type="text"><span>*</span>
+					</td>		
+				</tr>
+				<tr>
+					<td class="td_left">申请的部门：</td>
+					<td>
+						<input type="text"><span>*</span>
+					</td>
+					<td class="td_left">活动时间：</td>
+					<td>
+						<select name="active_time" id="">
+							<option value="09:00-10:00">09:00-10:00</option>
+							<option value="10:00-11:00">10:00-11:00</option>
+							<option value="11:00-12:00">11:00-12:00</option>
+							<option value="12:00-13:00">12:00-13:00</option>
+							<option value="13:00-14:00">13:00-14:00</option>
+							<option value="15:00-16:00">15:00-16:00</option>
+							<option value="16:00-17:00">16:00-17:00</option>
+							<option value="17:00-18:00">17:00-18:00</option>
+						</select>
+					</td>
+					<td class="td_left">您的职位：</td>
+					<td>
+						<input type="text"><span>*</span>
+					</td>
+				</tr>
+				<tr>
+					<td class="td_left">您所在的部门：</td>
+					<td>
+						<input type="text"><span>*</span>
+					</td>
+					<td class="td_left">E-MAIL：</td>
+					<td>
+						<input type="text"><span>*</span>
+					</td>
+					<td class="td_left">验证码：</td>
+					<td>
+						<input onblur="checkYzm()" class="yzm" id="checkpic" type="text">
+						<span class="yzm_msg" id="cmsg">验证码</span>
+					</td>
+				</tr>
+			</table>
+			<p class="biaozhu">
+				注：CakeTime将从中筛选部分申请，在一周内与您取得联系，并确定品尝事宜。谢谢您对CakeTime的关心
+			</p>
+			<p class="sub_p">
+				<a class="submit" href="">提交申请</a>
+			</p>
+			
+		</div>
+
+	  <!-- 脚部 -->
+    <!--底边框 		 -->
+    <div id="bottom">
+			<table></table>
+			<div id="bottom_parent">
+				<div>
+					<img src="image/reg_login/bot-logo.gif" alt="">
+				</div>
+				<!--两个ul 		 -->
+				<div id="bottom_ul2">
+					<ul id="bottom_u1">
+						<li><a href="aboutUs.html">关于我们</a></li>
+						<li><a href="cakeBook.html">Cake Book</a></li>
+						<li><a href="upDates.html">Updates</a></li>
+						<li><a href="#">加入我们</a></li>
+						<li><a href="#">官方微博</a></li>
+					</ul>
+					<ul id="bottom_u2">
+						<li class="order">订购服务</li>
+						<li>
+							<a href="#">如何订购</a>
+							<a href="#" class="mar">优惠</a>
+						</li>
+						<li>
+							<a href="#">如何付款</a>
+							<a href="#" class="mar">申请免费品尝</a>
+						</li>
+						<li><a href="#">如何收费</a></li>
+						<li><a href="#">配送范围</a></li>
+						<li><a href="#">包装及配套</a></li>
+					</ul>
+				</div>
+				<div id="bottom_b-right">
+					<div id="bottom_d1">
+						<p>定购热线：400-917-5917</p>
+						<p>13428908593</p>
+					</div>
+					<div id="bottom_d2">
+						<p>客服时间：9:00-21:00</p>
+						<p>客服邮箱: service@caketime.com.cn</p>
+					</div>
+					<div id="bottom_d3">
+						<p>送货时间：10：00 - 20：00</p>
+						<p>送货范围：　 深圳市罗湖片区、福田片区、南山片区、龙华坂田片区、 宝安中心区、西乡片区、龙岗片区、布吉片区 免费送货上门 <a href="" id="yH">粤ICP备13057838号</a></p>
+						<p>营业执照号：9144030058406033XW</p>
+						<p>食品经营许可证：JY14403110003939</p>
+						<a href="#">
+							<img src="https://szcert.ebs.org.cn/Images/govIcon.gif" alt="">
+						</a>
+					</div>
+				</div>
+			</div>
+			</div>
+	
+	<script>
+	// 验证码
+	var strYzm="",cYzm=false;
+		function yzm(){
+			var arr=[0,1,2,3,4,5,6,7,8,9];
+			var str=[];
+			for(var i=0;i<4;i++){
+				var index=Math.floor(Math.random()*arr.length);
+				str.push(arr[index]);
+			}
+			cmsg.innerHTML=str.join(" ");
+			strYzm=str.join("");
+		}
+	//验证码验证
+	function checkYzm(){
+		if(checkpic.value==strYzm){
+			cYzm=true;
+		}else{
+			cYzm=false;
+		}
+	}
+	</script>
+</body>
+</html>

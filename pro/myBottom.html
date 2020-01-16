@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>myBottom</title>
+	<style>
+		*{margin:0;padding:0}
+		ul{list-style:none;}
+		ul li,.mar{margin-left:30px;}
+		a{text-decoration:none;}
+		ul a:hover{text-decoration:underline;}
+		#bottom{height:260px;background:#877164;}
+		#bottom_parent{
+			width:1162px;
+			height:200px;
+			margin:0 auto;
+			display:flex;
+			flex-flow:row nowrap;
+			justify-content:space-between;
+			margin-top:30px;
+		}
+		#bottom_ul2{
+			width:450px;
+			height:150px;
+			display:flex;
+			flex-flow:row nowrap;
+		}
+		#bottom_u1>li a,.order{
+			font-family:"microsoft yahei";
+			font-size:14px;
+			color:#fff;
+		}
+		#bottom_u2 li a,#bottom_b-right p{
+			font-family:"microsoft yahei";
+			font-size:12px;
+			color:#e1d6c6;
+		}
+		#bottom_u1,#bottom_u2{margin-left:30px;}
+		#bottom_b-right{
+			width:480px;
+			height:180px;
+			display:flex;
+			justify-content:space-between;
+			flex-flow:row wrap;
+			margin-left:-50px;
+		}
+		#bottom_d1{
+			width:180px;
+			background:url("image/reg_login/icon-12.png");
+			background-repeat:no-repeat;
+			background-position:left center;
+			padding-left:40px;
+		}
+		#bottom_d2{
+			width:215px;
+			background:url("image/reg_login/icon-14.png");
+			background-repeat:no-repeat;
+			background-position:left center;
+			padding-left:35px;
+		}
+		#bottom_d3{
+			width:355px;
+			height:118px;
+			background:url("image/reg_login/icon-13.png");
+			background-repeat:no-repeat;
+			background-position:left 5px;
+			padding-left:35px;
+			position:relative;
+		}
+		#bottom_d3>a>img{
+			width:35px;
+			height:40px;
+			position:absolute;
+			bottom:-10px;
+			right:20px;
+		}
+		#bottom_b-right p{margin-top:8px;}
+		#bottom_b-right #yH{color:#3cf;}
+	</style>
+ </head>
+ <body>
+		<!--底边框 		 -->
+		<div id="bottom">
+			<table></table>
+			<div id="bottom_parent">
+				<div>
+					<img src="image/reg_login/bot-logo.gif" alt="">
+				</div>
+				<!--两个ul 		 -->
+				<div id="bottom_ul2">
+					<ul id="bottom_u1">
+						<li><a href="#">关于我们</a></li>
+						<li><a href="#">Cake Book</a></li>
+						<li><a href="#">Updates</a></li>
+						<li><a href="#">加入我们</a></li>
+						<li><a href="#">官方微博</a></li>
+					</ul>
+					<ul id="bottom_u2">
+						<li class="order">订购服务</li>
+						<li>
+							<a href="#">如何订购</a>
+							<a href="#" class="mar">优惠</a>
+						</li>
+						<li>
+							<a href="#">如何付款</a>
+							<a href="#" class="mar">申请免费品尝</a>
+						</li>
+						<li><a href="#">如何收费</a></li>
+						<li><a href="#">配送范围</a></li>
+						<li><a href="#">包装及配套</a></li>
+					</ul>
+				</div>
+				<div id="bottom_b-right">
+					<div id="bottom_d1">
+						<p>定购热线：400-917-5917</p>
+						<p>13428908593</p>
+					</div>
+					<div id="bottom_d2">
+						<p>客服时间：9:00-21:00</p>
+						<p>客服邮箱: service@caketime.com.cn</p>
+					</div>
+					<div id="bottom_d3">
+						<p>送货时间：10：00 - 20：00</p>
+						<p>送货范围：　 深圳市罗湖片区、福田片区、南山片区、龙华坂田片区、 宝安中心区、西乡片区、龙岗片区、布吉片区 免费送货上门 <a href="" id="yH">粤ICP备13057838号</a></p>
+						<p>营业执照号：9144030058406033XW</p>
+						<p>食品经营许可证：JY14403110003939</p>
+						<!-- <a href="#">
+							<img src="https://szcert.ebs.org.cn/Images/govIcon.gif" alt="">
+						</a> -->
+					</div>
+				</div>
+			</div>
+		</div>
+ </body>
+</html>

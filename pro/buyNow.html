@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>立即购买</title>
+	<link rel="stylesheet" href="css/foot.css">
+	<link rel="stylesheet" href="css/head.css">
+	<link rel="stylesheet" href="css/comm.css">
+	<style>
+		.buy_list{
+			width:1162px;
+			margin:auto;
+		}
+		.big_img{
+			width:472px;
+			height: 353px;
+			border:2px solid #b0916a;
+			float: left;
+		}
+		.big_img>img{
+			width:100%;
+			height: 353px;
+		}
+		.dg_intr{
+			width:670px;
+			float: left;
+			margin-left: 15px;
+		}
+		.dg_name{
+			color:#a68363;
+			font-size:24px;
+			border-bottom: 1px solid #d6d6d6;
+			padding:0px 0px 5px 5px;
+		}
+		.dg_size{
+			color:#a68363;
+			margin-top:15px;
+			padding-left:5px;
+			font-size:18px;
+		}
+		.dg_size>span{
+			color:#666;
+			margin-left:10px;
+		}
+		.dg_tips{
+			color:#666;
+			background-color:#efe9e3;
+			padding:0 35px;
+			margin-top:30px;
+		}
+		.dg_tips>span{
+			margin-right: 55px;
+		}
+		.dg_tips2{
+			color:#a68363;
+			font-size:18px;
+			padding:0 22px;
+			margin-top:30px;
+		}
+		.dg_tips2>span{
+			margin-right:150px;
+		}
+		.dg_pai{
+			color:#666;
+			font-size:18px;
+			margin-top:30px;
+			padding:0 20px;
+		}
+		.bottom_line{
+			padding-bottom: 20px;
+			border-bottom: 1px solid #d6d6d6;
+		}
+		.bottom_line::after{
+			content:"";
+			display: block;
+			clear: both;
+		}
+		.buy_dg_list{
+			display: flex;
+			justify-content: start;
+			align-items: center;
+			margin-top: 20px;
+			color:#a68363;
+		}
+		.buy_dg_list>.img_md_span{
+			width: 185px;
+			display: flex;
+			align-items: center;
+			position: relative;
+		}
+		.buy_dg_list>.img_md_span>.img_md{
+			width:60px;
+			height:50px;
+			border:1px solid #a68363;
+			text-align: center;
+		}
+		.buy_dg_list>.img_md_span>.img_md>img{
+			width:100%;
+			height:50px;
+		}
+		.buy_dg_list>.img_md_span>span{
+			margin-left: 15px;
+			font-size: 18px;
+		}
+		.buy_dg_list>.img_md_span>.img_lg{
+			position: absolute;
+			border: 2px solid #a68363;
+			left:65px;
+			top:-154px;
+			display: none;
+			transition: all 0.3s linear;
+		}
+		.img_md:hover+.img_lg{
+			display: block;
+			z-index: 1;
+		}
+		.buy_dg_list>.img_md_span>.img_lg>img{
+			width: 400px;
+		}
+		.buy_dg_list>.wenzi{
+			width:610px;
+			margin-left:20px;
+			color:#666;
+			font-size: 18px;
+		}
+		.buy_dg_list>.wenzi>input{
+			width:80px;
+		}
+		.number_num,.dg_price{
+			text-align: center;
+			width: 120px;
+			color:#a68363;
+		}
+		
+		.buy_dg_list>.number_num>span,.dg_num_price>.number_num>span{
+			display: inline-block;
+			width:35px;
+			height:25px;
+		}
+		.buy_dg_list>.number_num>span.s1,.dg_num_price>.number_num>span.s1{
+			color:#c7c7c8;
+			background-color:#f2f6f7;
+			cursor: pointer;
+		}
+		.buy_dg_list>.number_num>span.s2,.dg_num_price>.number_num>span.s2{
+			color:#b0916a;
+			cursor: pointer;
+			border:1px solid #b0916a;
+		}
+		.buy_dg_list>.dg_price,.dg_num_price>.dg_price{
+			width:170px;
+			font-size: 24px;
+			text-align: right;
+		}
+		.buy_dg_list>.dg_price>.dg_price_in,.dg_num_price>.dg_price{
+			font-size: 36px;
+		}
+		.heka{
+			width: 74px;
+		}
+		.txt{
+			width:920px;
+			padding:5px;
+		}
+		.jingxuan,.pay a{
+			width: 50px;
+			display: inline-block;
+			margin-left:6px;
+			font-size: 14px;
+			background-color:#b0916a;
+			color:#fff; 
+			height:30px;
+			line-height:30px;
+			text-align: center;
+			text-decoration: none;
+			border-radius: 4px;
+		}
+		.dinghuoren,.shouhuo,.shouhuo_anniu{
+			margin-top:20px;
+		}
+		.dinghuo_title,.shouhuo_title{
+			border-top: 1px solid #d6d6d6;
+			background-color:#f4f0ea;
+			color:#333;
+			padding-left:20px;
+		}
+		.shouhuo_title{
+			border: 0;
+		}
+		.add{
+			padding:15px 30px 20px;
+			color:#666;
+			border:1px solid #dacebf;
+			border-top:0px;
+		}
+		.add>span>input,.shouhuo_ren>span>input,.peisong_address input{
+			width:120px;
+			border:1px solid #b0916a;
+			height:24px;
+			line-height:24px;
+			padding-left: 3px;
+		}
+		.zhuyi{
+			color:#f00;
+		}
+		.send{
+			margin-left:10px; 
+		}
+		.shouhuo{
+			color:#666;
+			font-size: 14px;
+		}
+		.shouhuo_anniu>span{
+			display: inline-block;
+			margin-left: 5px;
+			width:90px;
+			height:21px;
+			border:1px solid #b0916a;
+			background-color: #f5f1ec;
+			color:#300;
+			text-align: center;
+			cursor: pointer;
+		}
+		.shouhuo_addr{
+			border:1px solid #b0916a;
+			padding:20px 40px;
+			margin-top: 10px;
+		}
+		.shouhuo_addr .new{
+			border:1px solid #b0916a;
+			border-radius:3px;
+			padding:2px 4px;
+			font-size: 12px;
+		}
+		.shouhuo_checkbox,.shouhuo_ren,.peisong_address div{
+			margin-top: 10px;
+		}
+		.peisong_address input{
+			width:452px;
+		}
+		.peisong_address>div+div{
+			margin-left: 65px;
+		}
+		.pay{
+			height:36px;
+			margin:30px 20px 50px 0px;
+			text-align: right;
+			font-size: 18px;
+			color:#333;
+			line-height: 36px;
+
+		}
+		.pay a{
+			width:150px;
+			height:30px;
+			margin-left: 30px;
+		}
+		.total,.fuhao{
+			display: inline-block;
+			color:#a68363;
+			font-size: 36px;
+		}
+		.fuhao{
+			font-size: 24px;
+		}
+		.dg_num_price{
+			margin:50px 20px 0px 0px;
+			display: flex; 
+			align-items: center;
+		}
+		.dg_num_price>.number_num{
+			margin-left: 350px;
+			width: 120px;
+		}
+		.dg_num_price>.dg_price{
+			width:150px;
+		}
+	</style>
+</head>
+<body>
+	 <!-- 引入头 -->
+	 <hr>
+	 <div id="head">
+		 <a href="index.html">
+			 <img class="img_time" src="image/reg_login/top-logo.png" alt="">
+		 </a>
+		 <!--  头里面的图片之间的内容-->
+		 <div id="head_nei">
+			 <div id="head_nei_top">
+				 <div>
+					 <span class="font-c">当前城市：</span>
+					 <span class="font-c" id="city">深圳市
+						 <img src="image/reg_login/jt_down.jpg" alt="">
+					 </span>
+				 </div>
+				 <div id="q-right">
+					 <a id="qq" href="#" title="点击开始咨询">QQ咨询</a>
+						 <a href="#" id="shopping">
+							 <span id="shopcat">0</span>件
+						 </a>
+						 <a href="my_login.html" class="bac">登录</a>
+						 <a href="my_reguser.html" class="bac">注册</a>
+				 </div>
+			 </div>
+			 <div id="head_nei_bottom">
+				 <div id="a_all">
+					 <a href="index.html">
+						 <p>Category</p>
+						 <p>产品名录</p>
+					 </a>
+					 <a href="aboutUs.html">
+						 <p>About Us</p>
+						 <p>关于我们</p>
+					 </a>
+					 <a href="ourService.html">
+						 <p>Our Service</p>
+						 <p>为您服务</p>
+					 </a>
+					 <a href="cakeBook.html">
+						 <p>Cake Book</p>
+						 <p>食材之旅</p>
+					 </a>
+					 <a href="upDates.html">
+						 <p>Updates</p>
+						 <p>最新活动</p>
+					 </a>
+				 </div>
+				 <div id="Phone">
+					 <p class="phone">400-917-59517</p>
+					 <p class="eat">就要吃 我就要吃</p>
+					 <p class="phone">13428908593</p>
+				 </div>
+			 </div>
+		 </div>
+		 <img src="image/reg_login/icon-3.png" alt="">
+	 </div>
+	 <!-- 以上是头部 -->
+	 <div class="line"></div>
+	 <br>
+	<div class="buy_list">
+		<!-- 定义整个列表里的结构--都一样 -->
+		<div class="type">
+			<!-- 上边的大图和大图右边的介绍 -->
+			<div class="bottom_line">
+				<!-- 左边的大图 -->
+				<div class="big_img">
+					<img src="image/buyNow/6a072221-7620-4d39-9881-b335c3b37baa.jpg" alt="">
+				</div>
+				<!-- 蛋糕介绍 -->
+				<div class="dg_intr">
+					<div class="dg_name">
+						<span id="dg_title">许愿池</span>
+						<span id="dg_other">Wishing Well</span>
+					</div>
+					<div class="dg_size">
+						规格选择：<span id="dg_bang">1磅</span>
+						<span id="dg_yuding">(需要提前6小时预订)</span>
+					</div>
+					<div class="dg_tips">
+						<span id="dg_chic">尺寸：边长13*13cm</span>
+						<span id="dg_people">适合3-4人食用</span>
+						<span id="dg_canju">配套餐具5份</span>
+					</div>
+					<div class="dg_tips2">
+						<span>甜度：2</span>
+						<span>含酒：含微量酒</span>
+					</div>
+					<div class="dg_pai">
+						<span>
+							巧克力牌内容：
+						</span>
+						<input type="text" placeholder="最多输入6个汉字或12个字符">
+					</div>
+					<div class="dg_num_price">
+						<div class="number_num">
+							<span id="dg_jian" class="s1">—</span>
+							<span id="dg_num" class="snum">1</span>
+							<span id="dg_jia" class="s2">+</span>
+						</div>
+						<div class="dg_price">
+							￥<span id="dg_price" class="dg_price_in">258</span>
+						</div>
+					</div>
+	
+				</div>
+
+			</div>
+			<!-- 数字蜡烛 -->
+			<div class="buy_dg_list bottom_line">
+				<!-- 小图和旁边的文字 -->
+				<div class="img_md_span">
+					<div class="img_md">
+						<img src="image/buyNow/d0257065-b4cf-4f59-bf25-be149fffd010.jpg" alt="">
+					</div>
+					<div class="img_lg">
+						<img src="image/buyNow/d0257065-b4cf-4f59-bf25-be149fffd010.jpg" alt="">
+					</div>
+					<span>数字蜡烛</span>
+				</div>
+				<div class="wenzi">
+					<input type="text" placeholder="输入数字">
+					<span>选择您想要的数字，1个数字表示1支蜡烛（如果需要两支数字为1的蜡烛就输入“11”）</span>
+				</div>
+				<span class="number_num">0</span>
+				<div class="dg_price">
+					￥<span class="dg_price_in">0</span>
+				</div>
+			</div>
+			<!-- 餐具 -->
+			<div class="buy_dg_list bottom_line">
+				<!-- 小图和旁边的文字 -->
+				<div class="img_md_span">
+					<div class="img_md">
+						<img src="image/buyNow/66870964-6dc0-42b7-97db-f61dc5bc7185.jpg" alt="">
+					</div>
+					<div class="img_lg">
+						<img src="image/buyNow/66870964-6dc0-42b7-97db-f61dc5bc7185.jpg" alt="">
+					</div>
+					<span>餐具</span>
+				</div>
+				<div class="wenzi">
+					<span>除了免费赠送10份餐具以外，您是否需要额外购买？</span>
+				</div>
+				<div id="canju" class="number_num">
+					<span class="s1">—</span>
+					<span class="snum">10</span>
+					<span class="s2">+</span>
+				</div>
+				<div class="dg_price">
+					￥<span id="canju_price" class="dg_price_in">0</span>
+				</div>
+			</div>
+			<!-- 免费蜡烛 -->
+			<div class="buy_dg_list bottom_line">
+				<!-- 小图和旁边的文字 -->
+				<div class="img_md_span">
+					<div class="img_md">
+						<img src="image/buyNow/78fe0b6c-e6a6-41d1-a7a4-9185efb7665c.jpg" alt="">
+					</div>
+					<div class="img_lg">
+						<img src="image/buyNow/78fe0b6c-e6a6-41d1-a7a4-9185efb7665c.jpg" alt="">
+					</div>
+					<span>免费蜡烛</span>
+				</div>
+				<div class="wenzi">
+					<span>免费蜡烛最多一个</span>
+				</div>
+				<div id="mianfei_lazhu" class="number_num">
+					<span class="s1">—</span>
+					<span class="snum">0</span>
+					<span class="s2">+</span>
+				</div>
+				<div class="dg_price">
+					￥<span class="dg_price_in">0</span>
+				</div>
+			</div>
+			<!-- 2磅保温杯 -->
+			<div class="buy_dg_list bottom_line">
+				<!-- 小图和旁边的文字 -->
+				<div class="img_md_span">
+					<div class="img_md">
+						<img src="image/buyNow/d9d30925-c143-4cb1-86ca-6dee4b19ab4a.jpg" alt="">
+					</div>
+					<div class="img_lg">
+						<img src="image/buyNow/d9d30925-c143-4cb1-86ca-6dee4b19ab4a.jpg" alt="">
+					</div>
+					<span>2磅保温杯</span>
+				</div>
+				<div class="wenzi">
+					<span>冷链高质量保温包，室内保冷约3小时，室外保冷约2小时，可放入一个蛋糕。</span>
+				</div>
+				<div id="baowenbei" class="number_num">
+					<span class="s1">—</span>
+					<span class="snum">0</span>
+					<span class="s2">+</span>
+				</div>
+				<div class="dg_price">
+					￥<span id="baowenbei_price" class="dg_price_in">0</span>
+				</div>
+			</div>
+			<!-- 生日派对装饰 -->
+			<div class="buy_dg_list bottom_line">
+				<!-- 小图和旁边的文字 -->
+				<div class="img_md_span">
+					<div class="img_md">
+						<img src="image/buyNow/b6af6e6c-1f4d-4747-b988-c8723365ddff.jpg" alt="">
+					</div>
+					<div class="img_lg">
+						<img src="image/buyNow/b6af6e6c-1f4d-4747-b988-c8723365ddff.jpg" alt="">
+					</div>
+					<span>生日派对装饰</span>
+				</div>
+				<div class="wenzi">
+					<span></span>
+				</div>
+				<div id="birthday_hat" class="number_num">
+					<span class="s1">—</span>
+					<span class="snum">0</span>
+					<span class="s2">+</span>
+				</div>
+				<div class="dg_price">
+					￥<span id="birthday_hat_price" class="dg_price_in">0</span>
+				</div>
+			</div>
+			<!-- 免费生日帽 -->
+			<div class="buy_dg_list bottom_line">
+				<!-- 小图和旁边的文字 -->
+				<div class="img_md_span">
+					<div class="img_md">
+						<img src="image/buyNow/b005dec3-cd78-417e-b428-7d0959dc03d0.jpg" alt="">
+					</div>
+					<div class="img_lg">
+						<img src="image/buyNow/b005dec3-cd78-417e-b428-7d0959dc03d0.jpg" alt="">
+					</div>
+					<span>免费生日帽</span>
+				</div>
+				<div class="wenzi">
+					<span>免费生日帽最多一个</span>
+				</div>
+				<div id="mianfei_maozi" class="number_num">
+					<span class="s1">—</span>
+					<span class="snum">0</span>
+					<span class="s2">+</span>
+				</div>
+				<div class="dg_price">
+					￥<span class="dg_price_in">0</span>
+				</div>
+			</div>
+			<!-- 贺卡 -->
+			<div class="buy_dg_list">
+				<div class="heka">
+					贺卡:
+				</div>
+				<textarea class="txt" placeholder="可输入50个字" maxlength="50" name="" id=""></textarea>
+				<a class="jingxuan" href="javascript:;">精选</a>
+			</div>
+			<!-- 订货人信息 -->
+			<div class="dinghuoren">
+				<div class="dinghuo_title">
+					订货人信息
+				</div>
+				<div class="add">
+					<span>手机号: <input type="text"></span>
+					<span>姓名: <input type="text"></span>
+					<span>
+						<label>
+							<input type="radio" name="sex" value="1">先生
+						</label>
+						<label>
+							<input type="radio" name="sex" value="0">女士
+						</label>
+						<label class="zhuyi">（姓名电话，请仔细确认！）</label>
+					</span>
+					<span>
+						验证码：<input type="text"><input type="button" class="send" value="发送验证码">
+					</span>
+				</div>
+			</div>
+			<!-- 收货人信息 -->
+			<div class="shouhuo">
+				<div class="shouhuo_title">
+					收货人信息
+				</div>
+				<div class="shouhuo_anniu">
+					<span>送货上门</span>
+					<span>自提</span>
+				</div>
+				<div class="shouhuo_addr">
+					<div>
+						<span class="new">+使用新地址</span>
+					</div>
+					<div class="shouhuo_checkbox">
+						<label>
+							<input type="checkbox">收货人与订货人相同
+						</label>
+					</div>
+					<div class="shouhuo_ren">
+						<span>手机号: <input type="text"></span>
+						<span>姓名: <input type="text"></span>
+						<span>
+							<label>
+								<input type="radio" name="sex" value="1">先生
+							</label>
+							<label>
+								<input type="radio" name="sex" value="0">女士
+							</label>
+						</span>
+					</div>
+					<div class="peisong_address">
+						<div>
+							配送地址: <input type="text">&nbsp;城市街道
+						</div>
+						<div>
+							<input type="text">&nbsp;楼层门牌号
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 付款 -->
+			<div class="pay">
+				您共需要支付:<span id="cake_price">268</span>元+<span id="peisong_price">0</span>元(配送费)- <span id="youhui_price">0</span>元(优惠金额)=&nbsp;&nbsp;<span class="fuhao">￥</span><span class="total" id="total">268元</span>
+				<a id="to_pay" href="javascript:;">去付款</a>
+			</div>
+			
+		</div>
+	</div>
+	  <!-- 脚部 -->
+    <!--底边框 		 -->
+    <div id="bottom">
+			<table></table>
+			<div id="bottom_parent">
+				<div>
+					<img src="image/reg_login/bot-logo.gif" alt="">
+				</div>
+				<!--两个ul 		 -->
+				<div id="bottom_ul2">
+					<ul id="bottom_u1">
+						<li><a href="aboutUs.html">关于我们</a></li>
+						<li><a href="cakeBook.html">Cake Book</a></li>
+						<li><a href="upDates.html">Updates</a></li>
+						<li><a href="#">加入我们</a></li>
+						<li><a href="#">官方微博</a></li>
+					</ul>
+					<ul id="bottom_u2">
+						<li class="order">订购服务</li>
+						<li>
+							<a href="#">如何订购</a>
+							<a href="#" class="mar">优惠</a>
+						</li>
+						<li>
+							<a href="#">如何付款</a>
+							<a href="#" class="mar">申请免费品尝</a>
+						</li>
+						<li><a href="#">如何收费</a></li>
+						<li><a href="#">配送范围</a></li>
+						<li><a href="#">包装及配套</a></li>
+					</ul>
+				</div>
+				<div id="bottom_b-right">
+					<div id="bottom_d1">
+						<p>定购热线：400-917-5917</p>
+						<p>13428908593</p>
+					</div>
+					<div id="bottom_d2">
+						<p>客服时间：9:00-21:00</p>
+						<p>客服邮箱: service@caketime.com.cn</p>
+					</div>
+					<div id="bottom_d3">
+						<p>送货时间：10：00 - 20：00</p>
+						<p>送货范围：　 深圳市罗湖片区、福田片区、南山片区、龙华坂田片区、 宝安中心区、西乡片区、龙岗片区、布吉片区 免费送货上门 <a href="" id="yH">粤ICP备13057838号</a></p>
+						<p>营业执照号：9144030058406033XW</p>
+						<p>食品经营许可证：JY14403110003939</p>
+						<a href="#">
+							<img src="https://szcert.ebs.org.cn/Images/govIcon.gif" alt="">
+						</a>
+					</div>
+				</div>
+			</div>
+			</div>
+
+	<script>
+		var span=document.querySelector(".dg_num_price>.number_num");
+		var dg_num=document.getElementById("dg_num");
+		//上面蛋糕价格
+		var dg_price=document.getElementById("dg_price");
+		//页面下蛋糕价格
+		var cake_price=document.getElementById("cake_price");
+		//总价
+		var total=document.getElementById("total");
+		//初始值
+		cake_price.innerHTML=dg_price.innerHTML;
+		total.innerHTML=cake_price.innerHTML;
+		var danjia=parseFloat(dg_price.innerHTML);
+		//餐具
+		var canju=document.getElementById("canju");
+		var canju_num=canju.children[1];
+		//餐具价格
+		var canju_price=document.getElementById("canju_price");
+		// 免费帽子
+		var mianfei_maozi=document.getElementById("mianfei_maozi");
+		var miao_num=mianfei_maozi.children[1];
+		// 免费蜡烛
+		var mianfei_lazhu=document.getElementById("mianfei_lazhu");
+		var lazhu_num=mianfei_lazhu.children[1];
+		//生日派对装饰
+		var birthday_hat=document.getElementById("birthday_hat");
+		var birthday_hat_num=birthday_hat.children[1];
+		//生日派对装饰价格
+		var birthday_hat_price=document.getElementById("birthday_hat_price");
+		//保温杯
+		var baowenbei=document.getElementById("baowenbei");
+		var baowenbei_num=baowenbei.children[1];
+		//保温杯价格
+		var baowenbei_price=document.getElementById("baowenbei_price");
+
+
+		//蛋糕数量
+		span.onclick=function(e){
+			if(e.target.nodeName=="SPAN"){
+				var n=parseInt(dg_num.innerHTML);
+				if(e.target.innerHTML=="+"){
+					n++;
+					cake_price.innerHTML=parseFloat(cake_price.innerHTML)+danjia;
+				}else if(e.target.innerHTML=="—" &&n>1){
+					n--;
+					cake_price.innerHTML=parseFloat(cake_price.innerHTML)-danjia;
+				}
+				dg_num.innerHTML=n;
+				dg_price.innerHTML=n*danjia;
+				// cake_price.innerHTML=n*danjia;
+				// cake_price.innerHTML=parseFloat(cake_price.innerHTML)+danjia;
+				total.innerHTML=parseFloat(cake_price.innerHTML);
+			}
+		}
+		//免费帽子
+		mianfei_maozi.onclick=function(e){
+			if(e.target.nodeName=="SPAN"){
+				var n=parseInt(miao_num.innerHTML);
+				if(e.target.innerHTML=="+"&&n<1){
+					n++;
+				}else if(e.target.innerHTML=="—" &&n>0){
+					n--;
+				}
+				miao_num.innerHTML=n;
+			}
+		}
+		//免费蜡烛
+		mianfei_lazhu.onclick=function(e){
+			if(e.target.nodeName=="SPAN"){
+				var n=parseInt(lazhu_num.innerHTML);
+				if(e.target.innerHTML=="+"&&n<1){
+					n++;
+				}else if(e.target.innerHTML=="—" &&n>0){
+					n--;
+				}
+				lazhu_num.innerHTML=n;
+			}
+		}
+		//餐具
+		canju.onclick=function(e){
+			if(e.target.nodeName=="SPAN"){
+				var n=parseInt(canju_num.innerHTML);
+				if(e.target.innerHTML=="+"){
+					n++;
+					cake_price.innerHTML=parseFloat(cake_price.innerHTML)+1;
+				}else if(e.target.innerHTML=="—" &&n>10){
+					n--;
+					cake_price.innerHTML=parseFloat(cake_price.innerHTML)-1;
+				}
+				canju_num.innerHTML=n;
+				canju_price.innerHTML=n-10;
+				total.innerHTML=parseFloat(cake_price.innerHTML);
+			}
+		}
+		//生日派对装饰
+		birthday_hat.onclick=function(e){
+			if(e.target.nodeName=="SPAN"){
+				var n=parseInt(birthday_hat_num.innerHTML);
+				if(e.target.innerHTML=="+"){
+					n++;
+					cake_price.innerHTML=parseFloat(cake_price.innerHTML)+39;
+				}else if(e.target.innerHTML=="—"&&n>0){
+					n--;
+					cake_price.innerHTML=parseFloat(cake_price.innerHTML)-39;
+				}
+				birthday_hat_num.innerHTML=n;
+				birthday_hat_price.innerHTML=n*39;
+				total.innerHTML=parseFloat(cake_price.innerHTML);
+			}
+		}
+		//保温杯
+		baowenbei.onclick=function(e){
+			if(e.target.nodeName=="SPAN"){
+				var n=parseInt(baowenbei_num.innerHTML);
+				if(e.target.innerHTML=="+"){
+					n++;
+					cake_price.innerHTML=parseFloat(cake_price.innerHTML)+22;
+				}else if(e.target.innerHTML=="—"&&n>0){
+					n--;
+					cake_price.innerHTML=parseFloat(cake_price.innerHTML)-22;
+				}
+				baowenbei_num.innerHTML=n;
+				baowenbei_price.innerHTML=n*22;
+				total.innerHTML=parseFloat(cake_price.innerHTML);
+			}
+		}
+		  
+	</script>
+</body>
+</html>

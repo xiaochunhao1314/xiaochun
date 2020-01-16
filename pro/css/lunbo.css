@@ -1,0 +1,47 @@
+#main{
+  width:1904px;
+  margin:0 auto;
+}
+#banner{
+    width:1904px;
+    overflow:hidden;
+    position:relative;
+  }
+  #ul-imgs{
+    list-style:none;
+    padding:0px;
+  }
+  #ul-imgs.transition{
+    transition:all .5s linear;
+  }
+  #ul-imgs>li{
+    width:1904px;
+    float:left;
+    margin:0px;
+  }
+  #ul-imgs img{
+    width:1904px;
+    height:564px;
+  }
+  #ul-idxs{
+    width:100px;
+    margin:0 auto;
+    list-style:none;
+    position:absolute;
+    bottom:25px;
+    left:50%;
+    margin-left:-50px;
+  }
+  #ul-idxs>li{
+    float:left;
+    width:10px; height:10px;
+    background-color:#fff;
+    border:1px solid #923A38;
+    border-radius:50%;
+    margin:0 5px;
+    cursor:pointer;
+  }
+  #ul-idxs>li.active{
+    background-color:#923A38;
+  }
+  

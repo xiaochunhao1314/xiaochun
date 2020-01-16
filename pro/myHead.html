@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>myHead</title>
+	<style>
+		body{margin:0;padding:0}
+		p{margin:0;padding:0}
+		a{text-decoration:none;}
+		#head{
+			width:1162px;
+			height:116px;
+			margin:0 auto;
+			display:flex;
+			flex-flow:row nowrap;
+			justify-content:space-between;
+			align-items:flex-start;
+		}
+		#head_nei{
+			width:800px;
+			height:210px;
+			margin-left:30px;
+		}
+		#head_nei_top,#head_nei_bottom{
+			width:100%;
+			height:31px;
+			display:flex;
+			flex-flow:row nowrap;
+			justify-content:space-between;
+			align-items:center;
+		}
+		#head_nei_top a{
+			color:#333;
+			font-size:14px;
+		}
+		#head_nei_top .bac{
+			background:#f7f7f7;
+			padding:6px 25px;
+		}
+		#head_nei_top #shopping{
+			background:#f4f0ea url("image/reg_login/icon-1.png") no-repeat 25px center;
+			padding:6px 15px 6px 60px;
+			line-height:30px;
+			margin-right:5px;
+			
+		}
+		#head_nei_top #shopcat{
+			padding-left:10px;
+		}
+		#head_nei_bottom{
+			height:82px;
+		}
+		.font-c,a p{
+			color:#767676;
+			font:14px "microsoft yahei";
+
+		}
+		.phone{
+			color:#666;
+			font:18px Arial;
+		}
+		a p:last-child,.eat{
+			color:#767676;
+			font-size:12px;
+		}
+		#city{
+			background:#e5e5e5;
+			padding:6px 10px;
+			text-align:center;
+			line-height:30px;
+		}
+		#city img{
+			margin-left:3px;
+			background:#fff;
+			padding:2px;
+		}
+		hr{	
+			width:100%;
+			margin:0;
+			background-color:#e1e1e1;
+			border:0;
+			height:1px;
+			position:absolute;
+			top:30px;
+		}
+		#a_all{
+			width:575px;
+			height:70px;
+			padding:12px 0px 0px;
+		}
+		#a_all a{
+			width:113px;
+			height:58px;
+			float:left;
+			text-align:center;
+			border-bottom:3px solid #fff;
+			margin-right:2px;
+		}
+		#a_all a.active{
+			border-bottom:3px solid #BAA07D;
+		}
+		#Phone{
+			width:125px;
+			display:inline-block;
+			background:url("image/reg_login/icon-2.png") no-repeat;
+			text-align:center;
+			margin:18px 15px 0px 0px;
+			padding-left:22px;
+		}
+		#head>img{
+			margin-top:5px;
+		}
+		#q-right{
+			height:30px;
+		}
+	</style>
+ </head>
+ <body>
+		<hr>
+		<div id="head">
+			<a href="index.html">
+				<img src="image/reg_login/top-logo.png" alt="">
+			</a>
+			<!--  头里面的图片之间的内容-->
+			<div id="head_nei">
+				<div id="head_nei_top">
+					<div>
+						<span class="font-c">当前城市：</span>
+						<span class="font-c" id="city">深圳市
+							<img src="image/reg_login/jt_down.jpg" alt="">
+						</span>
+					</div>
+					<div id="q-right">
+						<a id="qq" href="#" title="点击开始咨询">QQ咨询</a>
+							<a href="#" id="shopping">
+								<span id="shopcat">0</span>件
+							</a>
+							<a href="my_login.html" class="bac">登录</a>
+							<a href="#" class="bac">注册</a>
+					</div>
+				</div>
+				<div id="head_nei_bottom">
+					<div id="a_all">
+						<a href="index.html" class="active">
+							<p>Category</p>
+							<p>产品名录</p>
+						</a>
+						<a href="aboutUs.html">
+							<p>About Us</p>
+							<p>关于我们</p>
+						</a>
+						<a href="ourService.html">
+							<p>Our Service</p>
+							<p>为您服务</p>
+						</a>
+						<a href="cakeBook.html">
+							<p>Cake Book</p>
+							<p>食材之旅</p>
+						</a>
+						<a href="#">
+							<p>Updates</p>
+							<p>最新活动</p>
+						</a>
+					</div>
+					<div id="Phone">
+						<p class="phone">400-917-59517</p>
+						<p class="eat">就要吃 我就要吃</p>
+						<p class="phone">13428908593</p>
+					</div>
+				</div>
+			</div>
+			<img src="image/reg_login/icon-3.png" alt="">
+		</div>
+		<script>
+		</script>
+		
+ </body>
+</html>

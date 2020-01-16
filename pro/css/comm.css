@@ -1,0 +1,39 @@
+/*设置头和脚的尺寸*/
+.header_size,.footer_size{
+	width:100%;
+}
+.header_size{
+    height:7.25rem;
+}
+.footer_size{
+	height:16rem;
+}
+
+body,p{margin:0;padding:0;}
+.line{
+	width:100%;
+	height:7px;
+	background:url(../image/reg_login/border-bg.png) repeat-x;
+}
+/* 带有阴影的背景头 */
+.on-you{
+	background:url(../image/index/top-bg.png) no-repeat top center;
+}
+
+.bestnew{
+	margin-top:30px;
+	text-align:center;
+	display:flex;
+	justify-content:space-between;
+}
+.bestnew div a{
+	color:#666 !important;
+	font:12px "microsoft yahei";
+}
+.bestnew div a p{
+	margin-top:10px;
+}
+.bestnew div img{
+	width:369px;
+	height:223px;
+}

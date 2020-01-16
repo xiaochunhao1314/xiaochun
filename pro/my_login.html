@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>美时每客</title>
+	<link rel="stylesheet" href="css/comm.css">
+	<link rel="stylesheet" href="css/head.css">
+	<link rel="stylesheet" href="css/foot.css">
+	<script src="js/ajax.js"></script>
+	<style>
+		a{
+			text-decoration:none;
+			font-size:16px;
+			color:#BB8658;
+		}
+		#parent{
+			width:1400px;
+			margin:20px auto 0px;
+			text-align:center;
+		}
+		hr{
+			background-color:#e1e1e1;
+			border:0;
+			height:2px;
+		}
+		#last{
+			height:500px;
+			margin-top:80px;
+			margin-left:100px;
+		}
+		#loginleft,#loginright{
+			width:50%;
+			height:500px;
+			float:left;
+		}
+		#loginpic{
+			height:400px;
+			background-image:url("image/reg_login/login-bg.png");
+			background-repeat:no-repeat;
+			background-position:50% 50%;
+		}
+		#btn{
+			width:120px;
+			height:30px;
+			border:0;
+			border-radius:2px;
+			color:#fff;
+			font-size:18px;
+			background:#b0916a;
+			margin:5px 0 0 80px;
+			cursor: pointer;
+		}
+		#loginright p{
+			font-size:26px;
+			margin-left:-200px;
+			color:#33002F;
+		}
+		#msg{
+			width:450px;
+			margin-left:30px;
+			text-align:left;
+			line-height:24px;
+			text-indent:10px;
+			font-size:14px;
+			color:#666;
+		}
+		#cmsg{
+			font-size:14px;
+			padding-left:10px;
+			font-weight:bold;
+		}
+		#login_in{
+			width:70%;
+			height:200px;
+			margin:80px auto 0;
+			display:flex;
+			justify-content:space-between;
+		}
+		#login_in>div{
+			font-size:14px;
+			color:#666;
+		}
+		#login_in>div:first-child{
+			text-align:left;
+		}
+		#login_in>div input{
+			height:28px;
+			box-sizing:border-box;
+			margin:6px 0;
+			border:1px solid #B2946E;
+			border-radius:3px;
+			margin-top:5px;
+		}
+		#login_in>div img{
+			margin:50px 0 0 0;
+		}
+		#login_in #rong{
+			color:#f00;
+			display:none;
+		}
+		#forgetupwd{
+			display:block;
+			margin:20px 0 0 80px;
+		}
+	</style>
+ </head>
+<body>
+	<!-- 引入头 -->
+	<hr>
+    <div id="head">
+        <a href="index.html">
+            <img class="img_time" src="image/reg_login/top-logo.png" alt="">
+        </a>
+        <!--  头里面的图片之间的内容-->
+        <div id="head_nei">
+            <div id="head_nei_top">
+                <div>
+                    <!-- <span class="font-c">当前城市：</span>
+                    <span class="font-c" id="city">深圳市
+                        <img src="image/reg_login/jt_down.jpg" alt="">
+                    </span> -->
+                </div>
+                <div id="q-right">
+                    <!-- <a id="qq" href="#" title="点击开始咨询">QQ咨询</a>
+                        <a href="#" id="shopping">
+                            <span id="shopcat">0</span>件
+                        </a> -->
+                        <!-- <a href="my_login.html" class="bac">登录</a> -->
+                        <a href="my_reguser.html" class="bac">注册</a>
+                </div>
+            </div>
+            <div id="head_nei_bottom">
+                <div id="a_all">
+                    <a href="index.html">
+                        <p>Category</p>
+                        <p>产品名录</p>
+                    </a>
+                    <a href="aboutUs.html">
+                        <p>About Us</p>
+                        <p>关于我们</p>
+                    </a>
+                    <a href="ourService.html">
+                        <p>Our Service</p>
+                        <p>为您服务</p>
+                    </a>
+                    <a href="cakeBook.html">
+                        <p>Cake Book</p>
+                        <p>食材之旅</p>
+                    </a>
+                    <a href="upDates.html">
+                        <p>Updates</p>
+                        <p>最新活动</p>
+                    </a>
+                </div>
+                <div id="Phone">
+                    <p class="phone">400-917-59517</p>
+                    <p class="eat">就要吃 我就要吃</p>
+                    <p class="phone">13428908593</p>
+                </div>
+            </div>
+        </div>
+        <img src="image/reg_login/icon-3.png" alt="">
+    </div>
+	<!-- 以上是头部 -->
+
+		<div class="line">
+		</div>
+		<!--主体  -->
+		<div id="parent">
+			<img src="image/reg_login/hiy.png" alt="">
+			<hr>
+<!-- 			<img src="image/reg_login/register-top-bg.png" alt=""> -->
+			<div id="last">
+				<div id="loginleft">
+					<div id="loginpic">
+							<table></table>
+							<div id="login_in">
+								<div>
+									<table></table>
+									<span id="rong">密码错误！！！</span><br>
+									<span>手 机 号：</span>&nbsp;
+									<input type="text" id="phone"><br>
+									<span>登录密码：</span>
+									<input type="text" id="upwd"><br>
+									<span>验 证 码：</span>&nbsp;
+									<input type="text" id="checkpic">
+									<span id="cmsg">4789</span><br>
+									<span id="forgetupwd">忘记密码?</span><br>
+									<button id="btn">提 &nbsp; 交</button>
+								</div>
+								<div>
+									<img src="image/reg_login/icon-3.png" alt=""><br>
+									扫描二维码<br>
+									完成登录
+								</div>
+							</div>
+					</div>
+					
+				</div>
+				<div id="loginright">
+					<br>
+					<br>
+					<p>更多优惠等着您！<a href="#">甜头计划</a></p>
+					<div id="msg">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;欢迎成为美时每客会员，每时每刻都享受到最优惠的甜头计划，收到最时令的美味提示，享受我们为会员定制的活动MyCake Membership Program注册会员后可于每次订购美时每客蛋糕时获得MyCake甜头。"<br>
+					成为会员<br>
+					1如何获得甜头<br>
+					注册得200甜头;<br>
+					消费得订单10倍甜头，如：消费168元，得1680甜头; (优惠抵扣部份不计入)<br>			
+					好评得甜头：V1得10甜头/次;V2 得20甜头/次; V3得30甜头/次; V4得40甜头/次; V5得50甜头/次;<br> 
+					不定期，不定形式线上、线下的活动(Tips:参于100%得甜头)；<br>
+					2如何花甜头<br>
+					1、可抵应付金额。<br>
+					2、后续甜头可兑换新品、礼品等等；形式不断更新。
+					</div>
+				</div>
+			</div>
+		</div>
+		   <!-- 脚部 -->
+    <!--底边框 		 -->
+    <div id="bottom">
+			<table></table>
+			<div id="bottom_parent">
+				<div>
+					<img src="image/reg_login/bot-logo.gif" alt="">
+				</div>
+				<!--两个ul 		 -->
+				<div id="bottom_ul2">
+					<ul id="bottom_u1">
+						<li><a href="aboutUs.html">关于我们</a></li>
+						<li><a href="cakeBook.html">Cake Book</a></li>
+						<li><a href="upDates.html">Updates</a></li>
+						<li><a href="#">加入我们</a></li>
+						<li><a href="#">官方微博</a></li>
+					</ul>
+					<ul id="bottom_u2">
+						<li class="order">订购服务</li>
+						<li>
+							<a href="#">如何订购</a>
+							<a href="#" class="mar">优惠</a>
+						</li>
+						<li>
+							<a href="#">如何付款</a>
+							<a href="#" class="mar">申请免费品尝</a>
+						</li>
+						<li><a href="#">如何收费</a></li>
+						<li><a href="#">配送范围</a></li>
+						<li><a href="#">包装及配套</a></li>
+					</ul>
+				</div>
+				<div id="bottom_b-right">
+					<div id="bottom_d1">
+						<p>定购热线：400-917-5917</p>
+						<p>13428908593</p>
+					</div>
+					<div id="bottom_d2">
+						<p>客服时间：9:00-21:00</p>
+						<p>客服邮箱: service@caketime.com.cn</p>
+					</div>
+					<div id="bottom_d3">
+						<p>送货时间：10：00 - 20：00</p>
+						<p>送货范围：　 深圳市罗湖片区、福田片区、南山片区、龙华坂田片区、 宝安中心区、西乡片区、龙岗片区、布吉片区 免费送货上门 <a href="" id="yH">粤ICP备13057838号</a></p>
+						<p>营业执照号：9144030058406033XW</p>
+						<p>食品经营许可证：JY14403110003939</p>
+						<a href="#">
+							<img src="https://szcert.ebs.org.cn/Images/govIcon.gif" alt="">
+						</a>
+					</div>
+				</div>
+			</div>
+			</div>
+
+		<script src="js/yzm.js"></script>
+		<script>
+			var cUname=false,cPhone=false;
+			//检查用户名
+			var pname=document.getElementById("phone");
+				pname.onblur=checkuname;
+				function checkuname(){
+					if(!phone.value){
+						cPhone=false;
+					}else{
+						cPhone=true;
+						(async function(){
+							var result= await ajax({url:"/user/checkuname",type:"get",data:phone.value})
+							if(result==1){
+								cUname=true;
+							}else{
+								cUname=false;
+							}
+						})()
+					}
+				}
+			// function checkuname(){
+			// 	var xhr=new XMLHttpRequest();
+			// 	xhr.onreadystatechange=function(){
+			// 		if(xhr.readyState==4&&xhr.status==200){
+			// 			var result=xhr.responseText;
+			// 			if(result==1){
+			// 				cUname=true;
+			// 			}else{
+			// 				cUname=false;
+			// 			}
+			// 		}
+			// 	}
+			// 	xhr.open("get","/user/checkuname/"+phone.value,true);
+			// 	if(!phone.value){
+			// 		cPhone=false;
+			// 	}else{
+			// 		cPhone=true;
+			// 		console.log(phone.value);
+			// 		xhr.send();
+			// 	}
+			// }
+			//提交
+			var btn=document.getElementById("btn");
+			btn.onclick=function(){
+				var reg=/^1[3-9]\d{9}$/;
+				if(!cPhone){
+					alert("手机号码不能为空");
+					return;
+				}else if(!reg.test(phone.value)){
+					alert("手机号码格式不正确!");
+					return;
+				}else if(!upwd.value){
+					alert("密码不能为空！");
+					return;
+				}else if(!checkpic.value){
+					alert("请输入验证码！");
+					return;
+				}else if(!cYzm){
+					alert("请输入正确的验证码！");
+					return;
+				}else if(!cUname){
+					alert("该手机号码还未注册！");
+					return;
+				}
+				(async function(){
+					var result= await ajax({
+						url:"/user/login",
+						type:"get",
+						data:phone.value+"&"+upwd.value
+					});
+					if(result==1){
+						alert("登录成功");
+						//成功之后跳转
+						rong.style.display="none";
+					}else{
+						rong.style.display="inline";
+					}
+				})()
+				
+				// var xhr=new XMLHttpRequest();
+				// xhr.onreadystatechange=function(){
+				// 	if(xhr.readyState==4&&xhr.status==200){
+				// 		var result=xhr.responseText;
+				// 		if(result==1){
+				// 			alert("登录成功");
+				// 			//成功之后跳转
+				// 			rong.style.display="none";
+				// 		}else{
+				// 			rong.style.display="inline";
+				// 		}
+				// 	}
+				// }
+				// xhr.open("get","/user/login/"+phone.value+"&"+upwd.value,true);
+				// xhr.send();
+			}
+		</script>
+ </body>
+</html>

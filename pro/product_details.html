@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>美时每客订蛋糕网站</title>
+    <link rel="stylesheet" href="css/comm.css">
+    <link rel="stylesheet" href="css/head.css">
+    <link rel="stylesheet" href="css/foot.css">
+    <link rel="stylesheet" href="css/chef_intr.css">
+    <script src="js/ajax.js"></script>
+    <script src="js/jquery-1.11.3.js"></script>
+    <style>
+        *{margin:0;padding:0;}
+        .content{
+            width:1162px;
+            margin:auto;
+        }
+        .cake{
+            display:flex;
+            justify-content: space-between;
+            margin-top:20px;
+        }
+        .cake_left_img{
+            width:725px;
+            height:620px;
+        }
+        .cake_left_img .litle_img div{
+            width:60%;
+            display: flex;
+            margin:5px auto;
+        }
+        .cake_left_img .litle_img .bottom div{
+            /* display: block; */
+            width:85px;
+            height:62px;
+            /* background:#a78758; */
+            padding:4px;
+            margin-right:5px;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.3s linear;
+        }
+        .cake_left_img .litle_img .bottom div.activity{
+            opacity: 1;
+        }
+        .cake_left_img .litle_img .bottom div:hover{
+            opacity: 1;
+        } 
+        .cake_left_img .litle_img img{
+            width:83px;
+            height: 60px;
+            border: 1px solid #fff;
+        }
+        .cake_right_details{
+            width:420px;
+        }
+        .cake_right_details .cake_name{
+            width:500px;
+            border-bottom:1px solid #d6d6d6;
+            color:#a68363;
+            font-size:18px;
+            padding-bottom:5px;
+            position: relative;
+        }
+        .cake_right_details .cake_name #title{
+            font-size:24px;
+        }
+        .cake_right_details .cake_name #heart{
+            background: url(image/index/icon-16.png) no-repeat left center;
+            padding-left: 12px;
+            position:absolute;
+            right:2px;
+            top:5px;
+            color:#999;
+            font:15px Arial;
+        }
+        .cake_right_details .money{
+            color:#a68363;
+            font-size:24px;
+            margin-top:10px;
+        }
+        .cake_right_details .size{
+            margin-top: 15px;
+        }
+        .cake_right_details .size span{
+            display: inline-block;
+            width:71px;
+            height:30px;
+            line-height: 30px;
+            border:1px solid #cfbaaf;
+            border-radius: 1px;
+            color:#666;
+            font-size: 15px;
+            cursor: pointer;
+            text-indent: 7px;
+            position: relative;
+        }
+        .cake_right_details .size span.active label{
+            width:35px;
+            height:35px;
+            position:absolute;
+            right:2px;
+            top:-9px;
+            display: block;
+            background: url(image/product/checked-big.png) no-repeat;
+        }
+        .size_intr{
+            margin-top:15px;
+            color:#b59e90;
+            font:15px;
+        }
+        .size_intr .size_cun,.size_intr .size_can{
+            width:220px;
+            display: inline-block;
+            background: url(image/product/size-icon-1.png) no-repeat left center;
+            padding-left:20px;
+            margin:5px 0px;
+        }
+        .size_intr .size_can{
+            background: url(image/product/size-icon-3.png) no-repeat left center;
+        }
+        .size_intr .size_people,.size_intr .size_time{
+            background: url(image/product/size-icon-2.png) no-repeat left center;
+            padding-left:20px;
+            margin:5px 0px;
+        }
+        .size_intr .size_time{
+            background: url(image/product/size-icon-4.png) no-repeat left center;
+        }
+        .buy_add{
+            margin-top:45px;
+        }
+        .buy_add a{
+            width:150px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            display: inline-block;
+            background:#432818;
+            color: #fff;
+            font-size:18px;
+            margin-right:12px;
+        }
+        .img_right_content{
+            border-top:1px solid #d6d6d6;
+            padding-top:30px;
+            margin-top:25px;
+            color:#b59e90;
+            line-height: 20px;
+            font-size: 12px;
+        }
+        .cake_intr{
+            border-top:1px solid #d6d6d6;
+            margin-top:30px;
+        }
+        .cake_intr div{
+            padding:5px 10px;
+        }
+        .cake_intr div table{
+            color:#666;
+            font-size:14px;
+            line-height: 35px;
+        }
+        .td1{
+            width:75px;
+        }
+        .td2,.td4{
+            width:315px;
+            font-size:12px;
+        }
+        .td3{
+            width:355px;
+            font-size:12px;
+        }
+        .td4{
+            padding-right:30px;
+            line-height: 35px;
+        }
+        .cake_intr div table .tr2{
+            vertical-align: top;
+            
+        }
+        .bottom_bg{
+            width:100%;
+            height:10px;
+            margin-top:1px;
+            background: url(image/product/top-bg-2.png) no-repeat;
+        }
+        .cake_level{
+            display: flex;
+            justify-content: space-between;
+
+        }
+        .cake_level .cake_level_left p,.cake_level .cake_level_right p,.cake_discuss_right p{
+            color:#a68363;
+            font-size: 14px;
+            padding:0px 25px 10px 15px;
+        }
+        .cake_level .cake_level_right .imgs,.cake_discuss_right .imgs2{
+            width:406px;
+            height:324px;
+            background-color: #fcfbfb;
+            border:1px solid #eae5e3;
+            padding:3px;
+            border-radius: 2px;
+        }
+        .cake_level .cake_level_right .imgs div{
+             position: relative;
+        }
+        .cake_level .cake_level_right .imgs span{
+            width:366px;
+            padding:12px 20px;
+            position: absolute;
+            background: url(image/product/tit-bg2.png);
+            left: 0px;
+            bottom:4px;
+        }
+        .cake_discuss{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        .cake_discuss_left{
+            width:725px;
+        }
+        .cake_discuss_left p{
+            color:#a68363;
+            font:14px;
+            padding:0px 0px 10px 15px;
+        }
+        .cake_discuss_left .cake_discuss_content{
+            border-top:1px solid #d6d6d6;
+            margin-top:5px;
+        }
+        .cake_discuss_left p .cake_sweet{
+            margin-left: 530px;
+        }
+        .cake_discuss_left .cake_discuss_content ul{
+            list-style: none;
+            padding-left: 5px;
+            margin-top:10px;
+            color:#666;
+            font-size:12px;
+        }
+        .cake_discuss_left .cake_discuss_content ul li{
+            height:25px;
+            line-height:25px;
+            margin-left: 10px;
+            /* text-align: center; */
+        }
+        .cake_discuss_left .cake_discuss_content ul li:hover{
+            background: #a68363;
+        }
+        .cake_discuss_left .cake_discuss_content ul li span{
+            display: inline-block;
+        }
+        .cake_discuss_left .cake_discuss_content ul li .s1{
+            width: 120px;
+        }
+        .cake_discuss_left .cake_discuss_content ul li .s2{
+            width: 70px;
+            vertical-align:middle;
+        }
+        .cake_discuss_left .cake_discuss_content ul li .s3{
+            width: 60px;
+        }
+        .cake_discuss_left .cake_discuss_content ul li .s4{
+            text-align:left;
+            width: 330px;
+        }
+        .cake_discuss_left .cake_discuss_content ul li .s5{
+            width: 100px;
+            text-align: center;
+        }
+        .cake_discuss_right .imgs2{
+            height:330px;
+        }
+        .chef{
+            text-align: center;
+            padding-top:30px; 
+        }
+        .title{
+			width:1162px;
+			margin:auto;
+			text-align:center;
+        }
+        .borb{
+			border-bottom:1px solid #ddd;
+		}
+        /* 轮播图 */
+        .big{
+            width:725px;
+            height:540px;
+            margin:auto;
+            overflow:hidden;
+        }
+        .big>div{
+            width:2175px;
+            margin-left:-725px;
+            display:flex;
+            justify-content: start;
+        
+        }
+        .transition{
+            transition:all .5s linear;
+        }
+        .big>div>div{
+            width:725px;
+            height:540px;
+        }
+        .big img{
+            width:100%;
+        }
+        .activity{
+            background:#a78758;
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部信息 -->
+    <hr>
+    <div id="head">
+        <a href="index.html">
+            <img class="img_time" src="image/reg_login/top-logo.png" alt="">
+        </a>
+        <!--  头里面的图片之间的内容-->
+        <div id="head_nei">
+            <div id="head_nei_top">
+                <div>
+                    <span class="font-c">当前城市：</span>
+                    <span class="font-c" id="city">深圳市
+                        <img src="image/reg_login/jt_down.jpg" alt="">
+                    </span>
+                </div>
+                <div id="q-right">
+                    <a id="qq" href="#" title="点击开始咨询">QQ咨询</a>
+                        <a href="#" id="shopping">
+                            <span id="shopcat">0</span>件
+                        </a>
+                        <a href="my_login.html" class="bac">登录</a>
+                        <a href="my_reguser.html" class="bac">注册</a>
+                </div>
+            </div>
+            <div id="head_nei_bottom">
+                <div id="a_all">
+                    <a href="index.html">
+                        <p>Category</p>
+                        <p>产品名录</p>
+                    </a>
+                    <a href="aboutUs.html">
+                        <p>About Us</p>
+                        <p>关于我们</p>
+                    </a>
+                    <a href="ourService.html">
+                        <p>Our Service</p>
+                        <p>为您服务</p>
+                    </a>
+                    <a href="cakeBook.html">
+                        <p>Cake Book</p>
+                        <p>食材之旅</p>
+                    </a>
+                    <a href="upDates.html" class="active">
+                        <p>Updates</p>
+                        <p>最新活动</p>
+                    </a>
+                </div>
+                <div id="Phone">
+                    <p class="phone">400-917-59517</p>
+                    <p class="eat">就要吃 我就要吃</p>
+                    <p class="phone">13428908593</p>
+                </div>
+            </div>
+        </div>
+        <img src="image/reg_login/icon-3.png" alt="">
+    </div>
+    <!-- 以上是头部 -->
+    <div class="line"></div>
+    <div class="content">
+        <!-- 蛋糕图片和右边部分 -->
+        <div class="cake">
+            <div id="cake_lun" class="cake_left_img">
+                <!-- <div>
+                    <img src="image/product/4cc11ced-2bc5-420f-9352-de39b0a3d4c2.jpg" alt="">
+                </div>
+                <div class="litle_img">
+                    <div>
+                        <a href="">
+                            <img src="image/product/4cc11ced-2bc5-420f-9352-de39b0a3d4c2.jpg" alt="">
+                        </a>
+                        <a href="">
+                            <img src="image/product/4cc11ced-2bc5-420f-9352-de39b0a3d4c2.jpg" alt="">
+                        </a>
+                        <a href="">
+                            <img src="image/product/4cc11ced-2bc5-420f-9352-de39b0a3d4c2.jpg" alt="">
+                        </a>
+                        <a href="">
+                            <img src="image/product/4cc11ced-2bc5-420f-9352-de39b0a3d4c2.jpg" alt="">
+                        </a>   
+                    </div>
+                </div> -->
+            </div>
+            <div class="cake_right_details">
+                <!-- 名称和点赞数 -->
+                <div class="cake_name">
+                    <span id="title">金芒芒 </span>
+                    <span id="other_title"> Golden Mango</span> 
+                    <span id="heart">3</span>
+                </div>
+                <!-- 价钱 -->
+                <p class="money">
+                    ￥<span id="price"> 288</span>
+                </p>
+                <!-- 重量 -->
+                <div class="size">
+                    <span>
+                        1磅
+                        <label></label>
+                    </span>
+                    <span class="active">
+                        2磅
+                        <label></label>
+                    </span>
+                    <span>
+                        3磅
+                        <label></label>
+                    </span>
+                    <span>
+                        5磅
+                        <label></label>
+                    </span>
+
+                </div>
+                <!-- 尺寸，适合人数等 -->
+                <div class="size_intr">
+                    <p>
+                        <span class="size_cun" id="spec_size">7寸</span>
+                        <span class="size_people" id="spec_people">适合1-2人</span>
+                    </p>
+                    <p>
+                        <span class="size_can" id="spec_can">含10套餐具</span>
+                        <span class="size_time" id="spec_time">需提前6.0小时预订</span>
+                    </p>
+                </div>
+                <!-- 立即购买和加入购物车按钮 -->
+                <div class="buy_add">
+                    <a id="buyNow" href="#">立即购买</a>
+                    <a id="addChart" href="#">加入购物车</a>
+                </div>
+                <!-- 图片右侧的文字内容 -->
+                <div class="img_right_content">
+                        5磅（大磅数蛋糕）需特殊定制，由于制作工艺的特殊性，需至少提前48小时预定；如取消订单，需提前48小时通知到客服。
+                        图片展示为2磅蛋糕。<br><br>
+                        
+                        青柠与芒果<br>
+                        在酸甜里碰撞<br>
+                        在味蕾跳动前<br>
+                        视觉先撒个野<br><br>
+                        
+                        Caragana and mango collide in sweet and sour,and before taste buds beat,vision spreads wild first.
+                </div>
+
+            </div>
+        </div>
+        <!-- 蛋糕介绍-甜度-口感-保质期等等 -->
+        <div class="cake_intr">
+            <div>
+                <table>
+                    <tr>
+                        <td class="td1">甜度：</td>
+                        <td class="td3">3</td>
+                        <td class="td1">是否含酒:</td>
+                        <td class="td2">不含酒精</td>
+                        <td class="td1">口感：</td>
+                        <td class="td2">酸奶慕斯+芒果慕斯，酸甜适中刚刚好</td>
+                    </tr>
+                    <tr class="tr2">
+                        <td class="td1">适合人群:</td>
+                        <td class="td3">情侣、家人、朋友、闺蜜等</td>
+                        <td class="td1">适合场景:</td>
+                        <td class="td4">生日 结婚纪念日 升迁 入伙 乔迁新居 下午茶 欢乐派对 宴会 酒会 相亲 同学会 产品说明会 座谈会</td>
+                        <td class="td1">保 质 期:</td>
+                        <td class="td2">0℃-4℃冷藏1天</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- 蛋糕层次介绍和蛋糕食材介绍 -->
+        <div class="cake_level">
+            <div class="cake_level_left">
+                <p>蛋糕层次介绍</p>
+                <img src="image/product/df26de19-97d0-4c88-8b0a-ff8f78e8a503.jpg" alt="">
+                <!-- 图片下面的阴影条 -->
+                <p class="bottom_bg"></p>
+            </div>
+            <div class="cake_level_right">
+                <p>蛋糕食材介绍</p>
+                <div class="imgs">
+                    <div>
+                        <img src="image/product/46acd737-b2d9-4697-9ea0-b01411db554a.jpg" alt="">
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 蛋糕评价和蛋糕食材 -->
+        <div class="cake_discuss">
+            <div class="cake_discuss_left">
+                <p>评价(<span>2</span>条) <span class="cake_sweet">评论送甜头</span></p>
+                <div class="cake_discuss_content">
+                    <ul>
+                        <li>
+                            <span class="s1">139****668</span>
+                            <span class="s2"><img src="image/product/insid4_07_5.png" alt=""></span>
+                            <span class="s3">1磅</span>
+                            <span class="s4">味道很好吃，孩子也喜欢，吃了一大块</span>
+                            <span class="s5">2019-11-01</span>
+                        </li>
+                        <li>
+                            <span class="s1">139****668</span>
+                            <span class="s2"><img src="image/product/insid4_07_5.png" alt=""></span>
+                            <span class="s3">1磅</span>
+                            <span class="s4">味道很好吃，孩子也喜欢，吃了一大块</span>
+                            <span class="s5">2019-11-01</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="cake_discuss_right">
+                <p>蛋糕食材介绍</p>
+                <div class="imgs2">
+                    <div>
+                        <img src="image/product/23fd2855-cafa-4ac7-ba97-c584f0978a60.jpg" alt="">
+                        <img src="image/product/23fd2855-cafa-4ac7-ba97-c584f0978a60.jpg" alt="">
+                        <img src="image/product/23fd2855-cafa-4ac7-ba97-c584f0978a60.jpg" alt="">
+                        <img src="image/product/23fd2855-cafa-4ac7-ba97-c584f0978a60.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- 大厨推荐 -->
+        <div class="on-you">
+            <div class="chef">
+                <img src="image/product/chef.png" alt="">
+            </div>
+            <div id="pro_list">
+
+
+            </div>
+        </div>
+        <!-- 最新活动 -->
+        <div class="on-you">
+            <br>
+            <br>
+            <div class="title borb">
+                <img src="image/index/going.png" alt="">
+            </div>
+            <!--最新活动-->
+            <div class="bestnew">
+                <div>
+                    <a href="">
+                        <div>
+                            <img id="bestnew_i1" src="" alt="">
+                        </div>
+                        <p id="bestnew_p1"></p>
+                        <span id="bestnew_s1"></span>
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <div>
+                            <img id="bestnew_i2" src="" alt="">
+                        </div>
+                        <p id="bestnew_p2"></p>
+                        <span id="bestnew_s2"></span>
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <div>
+                            <img id="bestnew_i3" src="" alt="">
+                        </div>
+                        <p id="bestnew_p3"></p>
+                        <span id="bestnew_s3"></span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+        
+    <br>    
+    </div>
+     <!-- 脚部 -->
+    <!--底边框 		 -->
+    <div id="bottom">
+            <table></table>
+            <div id="bottom_parent">
+                <div>
+                    <img src="image/reg_login/bot-logo.gif" alt="">
+                </div>
+                <!--两个ul 		 -->
+                <div id="bottom_ul2">
+                    <ul id="bottom_u1">
+                        <li><a href="aboutUs.html">关于我们</a></li>
+                        <li><a href="cakeBook.html">Cake Book</a></li>
+                        <li><a href="upDates.html">Updates</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">官方微博</a></li>
+                    </ul>
+                    <ul id="bottom_u2">
+                        <li class="order">订购服务</li>
+                        <li>
+                            <a href="#">如何订购</a>
+                            <a href="#" class="mar">优惠</a>
+                        </li>
+                        <li>
+                            <a href="#">如何付款</a>
+                            <a href="#" class="mar">申请免费品尝</a>
+                        </li>
+                        <li><a href="#">如何收费</a></li>
+                        <li><a href="#">配送范围</a></li>
+                        <li><a href="#">包装及配套</a></li>
+                    </ul>
+                </div>
+                <div id="bottom_b-right">
+                    <div id="bottom_d1">
+                        <p>定购热线：400-917-5917</p>
+                        <p>13428908593</p>
+                    </div>
+                    <div id="bottom_d2">
+                        <p>客服时间：9:00-21:00</p>
+                        <p>客服邮箱: service@caketime.com.cn</p>
+                    </div>
+                    <div id="bottom_d3">
+                        <p>送货时间：10：00 - 20：00</p>
+                        <p>送货范围：　 深圳市罗湖片区、福田片区、南山片区、龙华坂田片区、 宝安中心区、西乡片区、龙岗片区、布吉片区 免费送货上门 <a href="" id="yH">粤ICP备13057838号</a></p>
+                        <p>营业执照号：9144030058406033XW</p>
+                        <p>食品经营许可证：JY14403110003939</p>
+                        <!-- <a href="#">
+                            <img src="https://szcert.ebs.org.cn/Images/govIcon.gif" alt="">
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+    </div>
+<script src="js/bestnew.js"></script>
+<script>
+    //接收index.html传过来的title
+    //window.location.href字符串的截取
+    //使用bom的获取地址栏查询字符串的方法
+    var urlParams=new URLSearchParams(location.search);
+    var title=urlParams.get("title");
+    console.log(title);
+
+    (async function(){
+		var result=await Promise.all([
+            //请求蛋糕--大厨推荐
+			ajax({
+				url:"/user/dg",
+				type:"get"
+			}),
+            //最新活动
+			ajax({
+				url:"/user/nactive",
+				type:"get"
+			}),
+            //轮播图
+            ajax({
+                url:"/user/product",
+                type:"get",
+                data:title
+            })
+        ]);
+        console.log(result);
+        var strHTML=`<ul>`;
+		for(var i=0;i<5;i++){
+			for(var j=0,op="";j<result[0][i].price.split("&").length;j++){
+				op+="<option value=''>"+result[0][i].price.split("&")[j]+"</option>";
+			}
+			strHTML+=`
+				<li data-title="${result[0][i].title}">
+                    <div class="imgs">
+                        <a href="javascript:;">
+							<img data-title="${result[0][i].title}" src="${result[0][i].sm}" alt="a">
+						</a>
+						<div class="size">
+							<div class="size-con">
+								<select name="">
+									${op}
+								</select>
+							</div>
+							<div class="buy">
+								<img src="image/index/icon-1-w.png">
+							</div>
+						</div>
+					</div>
+					<div>
+						<img src="image/index/icon-15.png">
+						<span class="s1" title="评论数">
+							${result[0][i].message}
+						</span>&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="">
+							<img src="image/index/icon-16.png">
+							<span class="s1" title="点击赞我">${result[0][i].heart}</span>
+						</a>
+					</div>
+					<p class="p_other" title="${result[0][i].other_title}">
+						${result[0][i].other_title}
+					</p>
+					<p class="p_main" title="${result[0][i].title}">
+						${result[0][i].title}
+					</p>
+				</li>`;
+		}
+		strHTML+=`</ul>`;
+		var pro_list=document.getElementById("pro_list");
+		pro_list.innerHTML=strHTML;
+        
+        //点击跳转到产品详情页
+        var uli=document.querySelector("#pro_list>ul");
+		uli.onclick=function(e){
+			if(e.target.nodeName=="IMG"&&e.target.getAttribute("alt")=="a"){
+				location="product_details.html?title="+e.target.getAttribute("data-title");
+			}
+		}
+
+        //最新活动
+		bestnew_p1.innerHTML=result[1][0].title;
+		bestnew_p2.innerHTML=result[1][1].title;
+		bestnew_p3.innerHTML=result[1][2].title;
+		bestnew_s1.innerHTML=result[1][0].date;
+		bestnew_s2.innerHTML=result[1][1].date;
+		bestnew_s3.innerHTML=result[1][2].date;
+		bestnew_i1.src=result[1][0].sm;
+		bestnew_i2.src=result[1][1].sm;
+        bestnew_i3.src=result[1][2].sm;
+        
+        //商品轮播图
+        var cake_lun=document.getElementById("cake_lun");
+        var pHTML=`
+            <div class="big">
+                <div class="transition">
+                    <div class="left"><img src="${result[2][0].lgq}" alt=""></div>
+                    <div class="center"><img src="${result[2][0].lgq}" alt=""></div>
+                    <div class="right"><img src="${result[2][0].lgq}" alt="">></div>
+                </div>
+            </div>`;
+        pHTML+=`
+        <div class="litle_img">
+            <div id="bot" class="bottom">
+                <div data-index="0" class="activity">
+                    <img src="${result[2][0].lgq}" alt="">
+                </div>
+                <div data-index="1">
+                    <img src="${result[2][0].lgw}" alt="">
+                </div>
+                <div data-index="2">
+                    <img src="${result[2][0].lge}" alt="">
+                </div>
+                <div data-index="3">
+                    <img src="${result[2][0].lgr}" alt="">
+                </div>
+            </div>`;
+            
+        cake_lun.innerHTML=pHTML;
+            
+        //起始位置
+        var i=0;
+        var distance=725;
+         //左中右大图片
+        var rightImg=document.querySelector(".right").children[0];
+        var centerImg=document.querySelector(".center").children[0];
+        var leftImg=document.querySelector(".left").children[0];
+        //上面的大图
+        var transEle=document.querySelector(".big>div");
+        //获取轮播图底部整体
+        var bottom=document.getElementById("bot");
+        //新加的--轮播图底部小图片
+        var botts=bottom.children;
+        // console.log("daxiao"+botts.length)//4
+        
+        //轮播图方法
+        function moveTo(){
+            i++;
+            if(i==botts.length){
+                //当轮播到最后一张图时i清零
+                i=0;
+                //把第一张图片取出来准备接着轮播
+                var tu=botts[0].children[0].getAttribute('src');
+            }else{
+                //取出下一张图的src
+                var tu=botts[i].children[0].getAttribute('src');
+            }
+            //向右滑动，把当前的大图变成滑动到的小图
+            rightImg.setAttribute('src',tu);
+            transEle.style.marginLeft=-distance*2+"px";
+            //清除下面小图的class----也就是边框
+            for(var bo of botts){
+                bo.className="";
+            }
+            //给移动到的小图片添加class--也就是边框
+            botts[i].className="activity";
+            //添加过渡效果
+            transEle.className="transition";
+            setTimeout(function(){
+                //过渡完直接取消过渡，瞬间恢复到初始状态
+                transEle.className="";
+                centerImg.setAttribute('src',tu);
+                transEle.style.marginLeft=-distance+"px";
+            },500);
+        }
+        
+        //自动执行轮播
+        var interval=2000;
+		var timer=setInterval(function(){
+			moveTo()
+		},interval);
+        
+        // //点击小图片执行轮播
+        var canClick=true;
+        bottom.onclick=function(e){
+            //点击小图取消自动轮播
+            clearInterval(timer);
+            if(e.target.nodeName=="IMG"){
+                if(canClick){
+                    canClick=false;
+                    // var distance=725;
+                    var bott=e.target;
+                    //需要变化的元素
+                    // var transEle=document.querySelector(".big>div");
+                    var active=document.querySelector(".activity");
+                    
+                    var clickIndex=bott.parentNode.getAttribute("data-index");//点击元素的data-index
+                    var currentIndex=active.getAttribute('data-index');//当前元素的data-index
+                    //获取点击元素的图片
+                    var currentSrc=bott.getAttribute('src');
+
+                    // 去掉当前元素的class
+                    active.className="";
+                    // 将点击元素添加class
+                    bott.parentNode.className="activity";
+                    //添加过渡效果
+                    transEle.className="transition";
+                    // 如果点击的index>当前的index right变
+                    if(clickIndex>currentIndex){
+                        //向右滑动，改变右边大图为点击当前的图片，再移动
+                        rightImg.setAttribute('src',currentSrc);
+                        transEle.style.marginLeft=-distance*2+"px";
+                    }else if(clickIndex<currentIndex){// 如果点击的index<当前的index left变
+                        //向左滑动，改变左边大图为点击当前的图片，再移动
+                        leftImg.setAttribute('src',currentSrc);
+                        transEle.style.marginLeft=0;
+                    }
+                    setTimeout(function(){
+                        //过渡完直接取消过渡，瞬间恢复到初始状态
+                        transEle.className="";
+                        centerImg.setAttribute('src',currentSrc);
+                        transEle.style.marginLeft=-distance+"px";
+                        canClick=true;
+                    },500);
+                }
+
+            }
+        }
+
+    })()
+
+</script>
+<script>
+    //点击重量改变图标--红对号
+    var dg_size=document.querySelector(".size");
+    dg_size.onclick=function(e){
+        var span=e.target;
+        if(span.nodeName=="SPAN"){
+            for(var d of dg_size.children){
+                d.className="";
+            }
+            span.className="active";
+            //获取价格和重量
+            var dg_price=document.getElementById("price");
+            var spec_size=document.getElementById("spec_size");
+            var spec_people=document.getElementById("spec_people");
+            var spec_can=document.getElementById("spec_can");
+            var bang=parseFloat(span.textContent);
+            if(bang==1){
+                // alert(111)
+                dg_price.innerHTML=" 168";
+                spec_size.innerHTML="5寸";
+                spec_people.innerHTML="适合1-2人";
+                spec_can.innerHTML="含8套餐具";
+            }else if(bang==2){
+                dg_price.innerHTML=" 288";
+                spec_size.innerHTML="7寸";
+                spec_people.innerHTML="适合3-5人";
+                spec_can.innerHTML="含10套餐具";
+            }else if(bang==3){
+                dg_price.innerHTML=" 568";
+                spec_size.innerHTML="12寸";
+                spec_people.innerHTML="适合5-7人";
+                spec_can.innerHTML="含15套餐具";
+            }else if(bang==5){
+                dg_price.innerHTML=" 688";
+                spec_size.innerHTML="15寸";
+                spec_people.innerHTML="适合8-10人";
+                spec_can.innerHTML="含20套餐具";
+            }
+        }
+    }
+</script>
+</body>
+</html>

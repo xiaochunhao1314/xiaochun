@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>天然蛋糕食材-榴莲蛋糕-巧克力蛋类食材</title>
+    <link rel="stylesheet" href="css/comm.css">
+    <link rel="stylesheet" href="css/head.css">
+    <link rel="stylesheet" href="css/foot.css">
+    <script src="js/ajax.js"></script>
+    <script src="js/jquery-1.11.3.js"></script>
+    <style>
+    .top_bg,.top_bg_down{
+        width:100%;
+        height:400px;
+        background:url(image/cake_book/page-bg.gif);
+    }
+    .top_bg{
+        margin-top: -3px;
+    }
+    .top_bg_down{
+        height:180px;
+    }
+    .content{
+        width: 1162px;
+        margin:auto;
+    }
+    .top_left{
+        width:495px;
+        float:left;
+        margin-top:100px;
+    }
+    .top_left h1{
+        color:#300;
+        font:30px "microsoft yahei";
+        margin:0px 0px 40px;
+        text-align: right;
+        font-weight: bold;
+        padding-right: 20px;
+    }
+    .top_left div{
+        color:#999;
+        font:14px "microsoft yahei";
+    }
+    .top_right{
+        float:left;
+        margin:50px 0px 0px 10px;
+    }
+    /* 带有阴影的背景头 */
+    .on-you{
+	    background:url(image/index/top-bg.png) no-repeat top center;
+    }
+    .natvral{
+        text-align: center;
+        padding-top:30px;
+    }
+    .window{
+        width:832px;
+        height:350px;
+        position:fixed;
+        display: none;
+        background: url(image/cake_book/window.png) no-repeat;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        padding:50px 60px;
+    }
+    .window .window_close{
+        width:21px;
+        height:21px;
+        position:absolute;
+        right:30px;
+        top:10px;
+        background:url(image/cake_book/window-close.png)  no-repeat;
+        cursor: pointer;
+    }
+    .window .window_div{
+        width:345px;
+        height:345px;
+        position:absolute;
+        border:1px solid #fff;
+    }
+    .window .window_product{
+        margin:20px 0px 0px  380px;
+        color:#fff;
+        font:16px "microsoft yahei";
+    }
+    #natvral_list ul{
+        width:98%;
+        margin:auto;
+        padding:0px;
+        display:flex;
+        flex-flow:row wrap;
+        padding-left:5px;
+		list-style: none;
+    }
+    #natvral_list ul li{
+        width:213px;
+        height:198px;
+        text-align: center;
+        color:#333;
+        font:12px "microsoft yahei";
+        margin-bottom: 10px;
+    }
+    #natvral_list ul li .imgs{
+        width:198px;
+        height:159px;
+        cursor: pointer;
+    }
+    #natvral_list .p_title{
+        margin-top:5px;
+    }
+    
+    </style>
+</head>
+<body>
+    <!-- 引入头 -->
+		<hr>
+		<div id="head">
+			<a href="index.html">
+				<img class="img_time" src="image/reg_login/top-logo.png" alt="">
+			</a>
+			<!--  头里面的图片之间的内容-->
+			<div id="head_nei">
+				<div id="head_nei_top">
+					<div>
+						<span class="font-c">当前城市：</span>
+						<span class="font-c" id="city">深圳市
+							<img src="image/reg_login/jt_down.jpg" alt="">
+						</span>
+					</div>
+					<div id="q-right">
+						<a id="qq" href="#" title="点击开始咨询">QQ咨询</a>
+							<a href="#" id="shopping">
+								<span id="shopcat">0</span>件
+							</a>
+							<a href="my_login.html" class="bac">登录</a>
+							<a href="my_reguser.html" class="bac">注册</a>
+					</div>
+				</div>
+				<div id="head_nei_bottom">
+					<div id="a_all">
+						<a href="index.html">
+							<p>Category</p>
+							<p>产品名录</p>
+						</a>
+						<a href="aboutUs.html">
+							<p>About Us</p>
+							<p>关于我们</p>
+						</a>
+						<a href="ourService.html">
+							<p>Our Service</p>
+							<p>为您服务</p>
+						</a>
+						<a href="cakeBook.html" class="active">
+							<p>Cake Book</p>
+							<p>食材之旅</p>
+						</a>
+						<a href="upDates.html">
+							<p>Updates</p>
+							<p>最新活动</p>
+						</a>
+					</div>
+					<div id="Phone">
+						<p class="phone">400-917-59517</p>
+						<p class="eat">就要吃 我就要吃</p>
+						<p class="phone">13428908593</p>
+					</div>
+				</div>
+			</div>
+			<img src="image/reg_login/icon-3.png" alt="">
+		</div>
+		<!-- 以上是头部 -->
+        <div class="line"></div>
+    <!-- 背景墙 -->
+    <div class="top_bg">
+        <div class="content">
+            <div class="top_left">
+                <h1>我们只选用优质进口原料 ——</h1>
+                <div>
+                    相比传统蛋糕店，我们省去昂贵的门面铺租和装修费用，将这些成本投入到蛋糕原料上，使顾客获得的价值更大化。现在市场上人造奶油充斥的情况让人非常痛心，我们希望顾客们可以吃到纯正的乳脂奶油蛋糕，这就是蛋糕本来的样子，大自然和人的完美合作。并且我们把来自全世界的50余种优质天然食材都带回美时每客的厨房， 只为做出地道的味道。
+                </div>
+            </div>
+            <div class="top_right">
+                <img src="image/cake_book/map.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="content on-you">
+        <div class="natvral">
+            <img src="image/cake_book/natvral.png" alt="">
+        </div>
+    </div>
+
+    <!-- 弹出框 -->
+    <div class="window" id="win">
+        <span class="window_close"></span>
+        <div class="window_div">
+            <img id="window_img" src="" alt="">
+        </div>
+        <div class="window_product">
+            <p>产品品牌：<span id="brands">法国总统</span></p>
+            <p>产品名称：<span id="names">淡奶油</span></p>
+        </div>
+    </div>
+    <!-- 食材列表 -->
+    <div class="content">
+        <div id="natvral_list">
+            
+        </div>
+    </div>
+
+    <div class="top_bg_down">
+        <div class="on-you">
+            <br>
+            <div class="content">
+                <a href="javascript:;"><img src="image/cake_book/cake-icon-1.png" alt=""></a>
+                <a href="javascript:;"><img src="image/cake_book/cake-icon-2.png" alt=""></a>
+                <a href="javascript:;"><img src="image/cake_book/cake-icon-3.png" alt=""></a>
+                <a href="javascript:;"><img src="image/cake_book/cake-icon-4.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <!--引入脚  -->
+      <!-- 脚部 -->
+    <!--底边框 		 -->
+    <div id="bottom">
+            <table></table>
+            <div id="bottom_parent">
+                <div>
+                    <img src="image/reg_login/bot-logo.gif" alt="">
+                </div>
+                <!--两个ul 		 -->
+                <div id="bottom_ul2">
+                    <ul id="bottom_u1">
+                        <li><a href="aboutUs.html">关于我们</a></li>
+                        <li><a href="cakeBook.html">Cake Book</a></li>
+                        <li><a href="upDates.html">Updates</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">官方微博</a></li>
+                    </ul>
+                    <ul id="bottom_u2">
+                        <li class="order">订购服务</li>
+                        <li>
+                            <a href="#">如何订购</a>
+                            <a href="#" class="mar">优惠</a>
+                        </li>
+                        <li>
+                            <a href="#">如何付款</a>
+                            <a href="#" class="mar">申请免费品尝</a>
+                        </li>
+                        <li><a href="#">如何收费</a></li>
+                        <li><a href="#">配送范围</a></li>
+                        <li><a href="#">包装及配套</a></li>
+                    </ul>
+                </div>
+                <div id="bottom_b-right">
+                    <div id="bottom_d1">
+                        <p>定购热线：400-917-5917</p>
+                        <p>13428908593</p>
+                    </div>
+                    <div id="bottom_d2">
+                        <p>客服时间：9:00-21:00</p>
+                        <p>客服邮箱: service@caketime.com.cn</p>
+                    </div>
+                    <div id="bottom_d3">
+                        <p>送货时间：10：00 - 20：00</p>
+                        <p>送货范围：　 深圳市罗湖片区、福田片区、南山片区、龙华坂田片区、 宝安中心区、西乡片区、龙岗片区、布吉片区 免费送货上门 <a href="" id="yH">粤ICP备13057838号</a></p>
+                        <p>营业执照号：9144030058406033XW</p>
+                        <p>食品经营许可证：JY14403110003939</p>
+                        <a href="#">
+                            <img src="https://szcert.ebs.org.cn/Images/govIcon.gif" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+<script>
+    (function(){
+        
+        var win=document.getElementById("win");
+        var brands=document.getElementById("brands");
+        var names=document.getElementById("names");
+        var window_img=document.getElementById("window_img");
+        var close=document.querySelector("#win>span");
+        
+        (async function(){
+            //打印天然食材列表
+            var result=await ajax({
+                url:"/user/natvral",
+                type:"get",
+            });
+            console.log(result);
+            var strHTML=`<ul id="ul">`;
+            for(var i=0;i<result.length;i++){
+                strHTML+=`
+                <li data-name="${result[i].name}" data-brand="${result[i].brand}" data-wm="${result[i].wm}">
+                    <img class="imgs" src="${result[i].sm}" alt="">
+                    <p class="p_title">${result[i].title}</p>
+                    <p class="p_brand">${result[i].brand}</p>
+                </li>
+                `;
+            }
+            strHTML+=`</ul>`;
+            natvral_list.innerHTML=strHTML;
+            
+            //打开弹出框
+            var uli=document.querySelector("#ul");
+            
+            // var uli=document.querySelectorAll("#natvral_list>ul li");
+            // for(var li of uli){
+            //     li.onclick=function(){
+            //         win.style.display="block";
+            //         brands.innerHTML=this.getAttribute("data-brand");
+            //         names.innerHTML=this.getAttribute("data-name");
+            //         window_img.src=this.getAttribute("data-wm");
+            //     }
+            // }
+            
+            //事件委托
+            uli.onclick=function(e){
+                var li=e.target.parentNode;
+                if(li.nodeName=="LI"){
+                    win.style.display="block";
+                    brands.innerHTML=li.getAttribute("data-brand");
+                    names.innerHTML=li.getAttribute("data-name");
+                    window_img.src=li.getAttribute("data-wm");
+                }
+            }
+
+            //jquery事件委托的做法
+            // $("#ul").on("click","li",function(){
+            //     // alert(1111)
+            //     win.style.display="block";
+            //     brands.innerHTML=this.getAttribute("data-brand");
+            //     names.innerHTML=this.getAttribute("data-name");
+            //     window_img.src=this.getAttribute("data-wm");
+            // })
+        })()
+
+        // 关闭弹出框
+        close.onclick=function(){
+            win.style.display="none";
+        }
+    })()
+
+ //onclick="show_window('${result[i].brand}','${result[i].name}','${result[i].wm}')"
+</script>
+    
+</body>
+</html>
